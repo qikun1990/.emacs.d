@@ -59,4 +59,14 @@
 ;; 开启全局 Company 补全
 (global-company-mode 1)
 
+;; 使用下面的配置来加入最近打开过文件的选项让我们更快捷的在图形界面的菜单中打开最近 编辑过的文件。
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-item 10)
+
+;; 这个快捷键绑定可以用之后的插件 counsel 代替
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
+;; 使用下面的配置文件将删除功能配置成与其他图形界面的编辑器相同，即当你选中一段文字 之后输入一个字符会替换掉你选中部分的文字。
+(delete-selection-mode 1)
 
