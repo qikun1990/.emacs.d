@@ -20,7 +20,7 @@
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)
 
-;; 关闭缩进 (第二天中被去除)
+;; 关闭缩进 (第二天中被去除)，使用;;注释解决缩进的问题
 ;; (electric-indent-mode -1)
 
 ;; 更改显示字体大小 16pt
@@ -56,5 +56,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-; 开启全局 Company 补全
+;; 开启全局 Company 补全
 (global-company-mode 1)
+
+
