@@ -152,3 +152,11 @@
 
 ;; 设置 org-agenda 打开快捷键
 (global-set-key (kbd "C-c a") 'org-agenda)
+
+;; 配置代码来设置一个模板（其中设置了待办事项的 优先级还有触发键）
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/.emacs.d/gtd.org" "工作安排")
+	 "* TODO [#B] %?\n  %i\n"
+	 :empty-lines 1)))
+
+(global-set-key (kbd "C-c r") 'org-capture)
