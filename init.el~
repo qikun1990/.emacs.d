@@ -1,7 +1,3 @@
-;; 关闭工具栏，tool-bar-mode 即为一个 Minor Mode
-;; (tool-bar-mode -1)
-
-;; 关闭文件滑动控件
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -9,18 +5,22 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; 关闭工具栏，tool-bar-mode 即为一个 Minor Mode
+(tool-bar-mode -1)
+
+;; 关闭文件滑动控件
 (scroll-bar-mode -1)
 
 ;; 显示行号
 (global-linum-mode 1)
 
 ;; 更改光标的样式（不能生效，解决方案见第二集）
-(setq cursor-type 'bar)
+(setq-default cursor-type 'bar)
 
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)
 
-;; 关闭缩进 (第二天中被去除)
+;; 关闭缩进 (第二天中被去除)，使用;;注释解决缩进的问题
 ;; (electric-indent-mode -1)
 
 ;; 更改显示字体大小 16pt
@@ -42,6 +42,7 @@
 
 ;; 这一行代码，将函数 load-init-file 绑定到 <f1> 键上
 (global-set-key (kbd "<f1>") 'load-init-file)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -54,3 +55,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; 开启全局 Company 补全
+(global-company-mode 1)
+
+;; 使用下面的配置来加入最近打开过文件的选项让我们更快捷的在图形界面的菜单中打开最近 编辑过的文件。
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-item 10)
+
+;; 这个快捷键绑定可以用之后的插件 counsel 代替
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
