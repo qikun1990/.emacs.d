@@ -159,4 +159,9 @@
 	 "* TODO [#B] %?\n  %i\n"
 	 :empty-lines 1)))
 
+;; 设置添加待办事项的快捷键
 (global-set-key (kbd "C-c r") 'org-capture)
+
+
+
+
