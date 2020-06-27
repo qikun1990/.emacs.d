@@ -77,6 +77,14 @@
 ;; http://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs
 (set-face-attribute 'default nil :height 160)
 
+;; 快速打开todo文件
+(defun open-todo-file()
+  (interactive)
+  (find-file "~/notebook/todo.org"))
+
+;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
+(global-set-key (kbd "<f3>") 'open-todo-file)
+
 ;; 快速打开配置文件
 (defun open-init-file()
   (interactive)
