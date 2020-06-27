@@ -11,6 +11,8 @@
 
 ;; Add Packages
 (defvar my/packages '(
+		;; hugo
+		ox-hugo
 		;; --- Auto-completion ---
 		company
 		;; --- Better Editor ---
