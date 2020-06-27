@@ -143,4 +143,12 @@
 ;; 然后使用下面的配置使其每次打开编辑器时加载主题
 (load-theme 'monokai 1)
 
+;; 添加 Org-mode 文本内语法高亮
+(require 'org)
+(setq org-src-fontify-natively t)
 
+;; 设置默认 Org Agenda 文件目录
+(setq org-agenda-files '("~/notebook/todo.org"))
+
+;; 设置 org-agenda 打开快捷键
+(global-set-key (kbd "C-c a") 'org-agenda)
