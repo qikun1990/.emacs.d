@@ -118,3 +118,19 @@
 ;; 使用下面的配置文件将删除功能配置成与其他图形界面的编辑器相同，即当你选中一段文字 之后输入一个字符会替换掉你选中部分的文字。
 (delete-selection-mode 1)
 
+;; 启动时全屏
+(setq initial-frame-alist (quote ((fullscreen . maximized))))
+
+;; 启用自动括号匹配（Highlight Matching Parenthesis）
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+
+;; 高亮当前行，当文本内容很多时可以很容易找到光标的位置。
+(global-hl-line-mode 1)
+
+;; 安装主题
+(add-to-list 'my/packages 'monokai-theme)
+
+;; 然后使用下面的配置使其每次打开编辑器时加载主题
+(load-theme 'monokai 1)
+
+
