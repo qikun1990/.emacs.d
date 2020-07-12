@@ -1,3 +1,59 @@
+(when (>= emacs-major-version 24)
+     (require 'package)
+     (package-initialize)
+     (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
+		      ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
+
+;; 注意 elpa.emacs-china.org 是 Emacs China 中文社区在国内搭建的一个 ELPA 镜像
+
+;; cl - Common Lisp Extension
+(require 'cl)
+
+;; Add Packages
+(defvar my/packages '(
+		      ;; 彩虹猫
+		      nyan-mode
+		      ;; 代码块
+		      yasnippet
+		      ;; search
+		      helm-ag
+		      ;; hugo
+		      ox-hugo
+		      ;; --- Auto-completion ---
+		      company
+		      ;; --- Better Editor ---
+		      hungry-delete
+		      swiper
+		      counsel
+		      smartparens
+		      ;; --- Major Mode ---
+		      js2-mode
+		      ;; --- Minor Mode ---
+		      nodejs-repl
+		      exec-path-from-shell
+		      ;; --- Themes ---
+		      monokai-theme
+		      ;; solarized-theme
+		      ) "Default packages")
+
+(setq package-selected-packages my/packages)
+
+(defun my/packages-installed-p ()
+     (loop for pkg in my/packages
+	   when (not (package-installed-p pkg)) do (return nil)
+	   finally (return t)))
+
+(unless (my/packages-installed-p)
+     (message "%s" "Refreshing package database...")
+     (package-refresh-contents)
+     (dolist (pkg my/packages)
+       (when (not (package-installed-p pkg))
+	 (package-install pkg))))
+
+;; Find Executable Path on OS X
+(when (memq window-system '(mac ns))
+   (exec-path-from-shell-initialize))
+
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -27,13 +83,21 @@
 ;; http://stackoverflow.com/questions/294664/how-to-set-the-font-size-in-emacs
 (set-face-attribute 'default nil :height 160)
 
+;; 快速打开todo文件
+(defun open-todo-file()
+  (interactive)
+  (find-file "~/notebook/todo.org"))
+
+;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
+(global-set-key (kbd "<f8>") 'open-todo-file)
+
 ;; 快速打开配置文件
 (defun open-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
 ;; 这一行代码，将函数 open-init-file 绑定到 <f2> 键上
-(global-set-key (kbd "<f2>") 'open-init-file)
+(global-set-key (kbd "<f10>") 'open-init-file)
 
 ;; 快速加载配置文件
 (defun load-init-file()
@@ -41,14 +105,14 @@
   (load-file "~/.emacs.d/init.el"))
 
 ;; 这一行代码，将函数 load-init-file 绑定到 <f1> 键上
-(global-set-key (kbd "<f1>") 'load-init-file)
+(global-set-key (kbd "<f12>") 'load-init-file)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (company))))
+ '(package-selected-packages (quote (nyan-mode company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -66,3 +130,72 @@
 
 ;; 这个快捷键绑定可以用之后的插件 counsel 代替
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
+;; 使用下面的配置文件将删除功能配置成与其他图形界面的编辑器相同，即当你选中一段文字 之后输入一个字符会替换掉你选中部分的文字。
+(delete-selection-mode 1)
+
+;; 启动时全屏
+(setq initial-frame-alist (quote ((fullscreen . maximized))))
+
+;; 启用自动括号匹配（Highlight Matching Parenthesis）
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+
+;; 高亮当前行，当文本内容很多时可以很容易找到光标的位置。
+(global-hl-line-mode 1)
+
+;; 安装主题
+(add-to-list 'my/packages 'monokai-theme)
+
+;; 然后使用下面的配置使其每次打开编辑器时加载主题
+(load-theme 'monokai 1)
+
+;; 添加 Org-mode 文本内语法高亮
+(require 'org)
+(setq org-src-fontify-natively t)
+
+;; 设置默认 Org Agenda 文件目录
+(setq org-agenda-files '("~/notebook/todo.org"))
+
+;; 设置 org-agenda 打开快捷键
+(global-set-key (kbd "C-c a") 'org-agenda)
+
+;; 配置代码来设置一个模板（其中设置了待办事项的 优先级还有触发键）
+(setq org-capture-templates
+      '(("t" "TODO" entry (file+headline "~/notebook/todo.org" "工作安排")
+	 "* TODO [#B] %?\n  %i\n"
+	 :empty-lines 1)))
+
+;; 设置添加待办事项的快捷键
+(global-set-key (kbd "C-c t") 'org-capture)
+
+;; 因为每次保存中文的时候都需要选择解码，我们可以使用下面的配置将文本解码设置默认为 UTF-8
+(set-language-environment "UTF-8")
+
+;; 安装好 ag 后我们就可以安装 helm-ag 插件了。（它的 GitHub 仓库地址在这里）在安装 完成后可以为其设置快捷键
+(global-set-key (kbd "C-c s") 'helm-do-ag-project-root)
+
+;; 代码块配置
+(add-to-list 'load-path
+              "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+
+
+(setq fonts
+      (cond ((eq system-type 'darwin)     '("Monaco"    "STHeiti"))
+            ((eq system-type 'gnu/linux)  '("Menlo"     "WenQuanYi Zen Hei"))
+            ((eq system-type 'windows-nt) '("Consolas"  "Microsoft Yahei"))))
+(set-face-attribute 'default nil :font
+                    (format "%s:pixelsize=%d" (car fonts) 14))
+(dolist (charset '(kana han symbol cjk-misc bopomofo))
+  (set-fontset-font (frame-parameter nil 'font) charset
+                    (font-spec :family (car (cdr fonts)))))
+;; Fix chinese font width and rescale
+(setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2) ("STHeiti". 1.2)))
+
+
+
+;; Nyan Cat
+(setq nyan-wavy-trail t)
+(setq nyan-bar-length 20)
+(nyan-mode)
