@@ -101,7 +101,7 @@
   (load-file "~/.emacs.d/init.el"))
 
 ;; 这一行代码，将函数 load-init-file 绑定到 <f1> 键上
-(global-set-key (kbd "<f1>") 'load-init-file)
+(global-set-key (kbd "<f3>") 'load-init-file)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -157,7 +157,7 @@
 
 ;; 配置代码来设置一个模板（其中设置了待办事项的 优先级还有触发键）
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/.emacs.d/gtd.org" "工作安排")
+      '(("t" "Todo" entry (file+headline "~/notebook/todo.org" "工作安排")
 	 "* TODO [#B] %?\n  %i\n"
 	 :empty-lines 1)))
 
