@@ -110,7 +110,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (nyan-mode company))))
+ '(nyan-mode t)
+ '(package-selected-packages (quote (evil undo-tree nyan-mode company))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -190,7 +191,6 @@
                     (font-spec :family (car (cdr fonts)))))
 ;; Fix chinese font width and rescale
 (setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2) ("STHeiti". 1.2)))
-
 
 
 
