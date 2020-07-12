@@ -5,6 +5,6 @@
 (("org-capture-last-stored"
  (filename . "~/notebook/todo.org")
  (front-context-string . "** TODO [#B] tes")
- (rear-context-string . "\n \n \n\n\n\n* 工作安排\n\n")
- (position . 22097))
+ (rear-context-string . "ODO [#B] test4\n\n")
+ (position . 1229))
 )
