@@ -157,18 +157,18 @@
 
 ;; 配置代码来设置一个模板（其中设置了待办事项的 优先级还有触发键）
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/notebook/todo.org" "工作安排")
+      '(("t" "TODO" entry (file+headline "~/notebook/todo.org" "工作安排")
 	 "* TODO [#B] %?\n  %i\n"
 	 :empty-lines 1)))
 
 ;; 设置添加待办事项的快捷键
-(global-set-key (kbd "C-c r") 'org-capture)
+(global-set-key (kbd "C-c t") 'org-capture)
 
 ;; 因为每次保存中文的时候都需要选择解码，我们可以使用下面的配置将文本解码设置默认为 UTF-8
 (set-language-environment "UTF-8")
 
 ;; 安装好 ag 后我们就可以安装 helm-ag 插件了。（它的 GitHub 仓库地址在这里）在安装 完成后可以为其设置快捷键
-(global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
+(global-set-key (kbd "C-c s") 'helm-do-ag-project-root)
 
 
 
