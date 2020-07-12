@@ -85,7 +85,7 @@
   (find-file "~/notebook/todo.org"))
 
 ;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
-(global-set-key (kbd "<f3>") 'open-todo-file)
+(global-set-key (kbd "<f8>") 'open-todo-file)
 
 ;; 快速打开配置文件
 (defun open-init-file()
@@ -93,7 +93,7 @@
   (find-file "~/.emacs.d/init.el"))
 
 ;; 这一行代码，将函数 open-init-file 绑定到 <f2> 键上
-(global-set-key (kbd "<f2>") 'open-init-file)
+(global-set-key (kbd "<f10>") 'open-init-file)
 
 ;; 快速加载配置文件
 (defun load-init-file()
@@ -101,7 +101,7 @@
   (load-file "~/.emacs.d/init.el"))
 
 ;; 这一行代码，将函数 load-init-file 绑定到 <f1> 键上
-(global-set-key (kbd "<f3>") 'load-init-file)
+(global-set-key (kbd "<f12>") 'load-init-file)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
