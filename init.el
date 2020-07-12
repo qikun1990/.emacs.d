@@ -193,4 +193,6 @@
 (setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2) ("STHeiti". 1.2)))
 
 
-
+;; Enable Evil
+(require 'evil)
+(evil-mode 1)
