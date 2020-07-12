@@ -11,6 +11,8 @@
 
 ;; Add Packages
 (defvar my/packages '(
+		      ;; 代码块
+		      yasnippet
 		      ;; search
 		      helm-ag
 		      ;; hugo
@@ -170,5 +172,9 @@
 ;; 安装好 ag 后我们就可以安装 helm-ag 插件了。（它的 GitHub 仓库地址在这里）在安装 完成后可以为其设置快捷键
 (global-set-key (kbd "C-c s") 'helm-do-ag-project-root)
 
-
+;; 代码块配置
+(add-to-list 'load-path
+              "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
 
