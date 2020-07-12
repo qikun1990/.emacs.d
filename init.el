@@ -179,7 +179,7 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-
+;; 中英文混排表格对齐
 (setq fonts
       (cond ((eq system-type 'darwin)     '("Monaco"    "STHeiti"))
             ((eq system-type 'gnu/linux)  '("Menlo"     "WenQuanYi Zen Hei"))
