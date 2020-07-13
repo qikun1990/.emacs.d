@@ -11,8 +11,6 @@
 
 ;; Add Packages
 (defvar my/packages '(
-		      ;;
-		      evil
 		      ;; 代码块
 		      yasnippet
 		      ;; search
@@ -181,7 +179,7 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-
+;; 中英文混排表格对齐
 (setq fonts
       (cond ((eq system-type 'darwin)     '("Monaco"    "STHeiti"))
             ((eq system-type 'gnu/linux)  '("Menlo"     "WenQuanYi Zen Hei"))
@@ -198,4 +196,3 @@
 ;; Enable Evil
 (require 'evil)
 (evil-mode 1)
-
