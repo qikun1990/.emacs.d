@@ -193,9 +193,9 @@
 (setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2) ("STHeiti". 1.2)))
 
 
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
+;; Enable Evil 不使用evil-mode了，总是误操作
+;; (require 'evil)
+;; (evil-mode 1)
 
 
 (defun notify-osx (title message)   
