@@ -220,3 +220,11 @@
 (add-hook 'org-pomodoro-killed-hook    
 	(lambda ()
 		(notify-osx "Pomodoro Killed" "One does not simply kill a pomodoro!")))
+
+(setq org-directory "~/notebook/")
+
+(setq org-mobile-directory "~/notebook/org-mobile")
+
+(setq org-mobile-inbox-for-pull "~/notebook/inbox.org")
+
+(setq org-mobile-files (list "~/notebook/todo.org"))
