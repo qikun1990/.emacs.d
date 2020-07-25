@@ -113,7 +113,7 @@
  '(nyan-mode t)
  '(package-selected-packages
    (quote
-    (smart-input-source org-pomodoro evil undo-tree nyan-mode company))))
+    (org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -230,3 +230,5 @@
 (setq org-mobile-inbox-for-pull "~/notebook/inbox.org")
 
 (setq org-mobile-files (list "~/notebook/todo.org"))
+
+
