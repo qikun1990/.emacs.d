@@ -199,7 +199,7 @@
 (require 'evil)
 (evil-mode 1)
 
-
+;; 配置番茄钟，在mac中可以alert提醒
 (defun notify-osx (title message)   
 	(call-process "terminal-notifier"		 
 		nil 0 nil		 
@@ -222,7 +222,7 @@
 (add-hook 'org-pomodoro-killed-hook    
 	(lambda ()
 		(notify-osx "Pomodoro Killed" "One does not simply kill a pomodoro!")))
-
+;; 配置mobile-org
 (setq org-directory "~/notebook/")
 
 (setq org-mobile-directory "~/notebook/org-mobile")
