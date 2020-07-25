@@ -230,5 +230,16 @@
 (setq org-mobile-inbox-for-pull "~/notebook/inbox.org")
 
 (setq org-mobile-files (list "~/notebook/todo.org"))
-
-
+;; 使用smart-input-source前需先安装macism，这个是切换mac中输入法的工具
+;; 配置smart-input-source,20200725目前最新版的包名已经改成sis，包括方法前缀均已改变
+(smart-input-source-ism-lazyman-config
+"com.apple.keylayout.ABC"
+"com.apple.inputmethod.SCIM.ITABC")
+;; enable the /cursor color/ mode
+(smart-input-source-global-cursor-color-mode t)
+;; enable the /respect/ mode
+(smart-input-source-global-respect-mode t)
+;; enable the /follow context/ mode for all buffers
+(smart-input-source-global-follow-context-mode t)
+;; enable the /inline english/ mode for all buffers
+(smart-input-source-global-inline-mode t)
