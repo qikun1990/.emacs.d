@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name:blog文章模版 
+# key:article
+# --
+** TODO ${0: subtree_name}
+   :PROPERTIES:
+   :EXPORT_FILE_NAME:${1: export_file_name} 
+   :EXPORT_DATE: ${2: export_date}
+   :END:
+${3: blog_name}
+
+#+hugo: more
+${4: context}
