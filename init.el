@@ -162,11 +162,14 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; 配置代码来设置一个模板（其中设置了待办事项的 优先级还有触发键）
+;;(setq org-capture-templates
+;;      '(("t" "TODO" entry (file+headline "~/notebook/todo.org" "工作安排")
+;;	 "* TODO [#B] %?\n  %i\n"
+;;	 :empty-lines 1)))
 (setq org-capture-templates
-      '(("t" "TODO" entry (file+headline "~/notebook/todo.org" "工作安排")
+      '(("t" "TODO" entry (file "~/notebook/inbox.org")
 	 "* TODO [#B] %?\n  %i\n"
 	 :empty-lines 1)))
-
 ;; 设置添加待办事项的快捷键
 (global-set-key (kbd "C-c t") 'org-capture)
 
@@ -244,3 +247,17 @@
 (smart-input-source-global-follow-context-mode t)
 ;; enable the /inline english/ mode for all buffers
 (smart-input-source-global-inline-mode t)
+
+(setq org-todo-keywords
+      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
+
+(setq org-todo-keyword-faces
+      (quote (("TODO" :foreground "red" :weight bold)
+              ("NEXT" :foreground "blue" :weight bold)
+              ("DONE" :foreground "forest green" :weight bold)
+              ("WAITING" :foreground "orange" :weight bold)
+              ("HOLD" :foreground "magenta" :weight bold)
+              ("CANCELLED" :foreground "forest green" :weight bold)
+              ("MEETING" :foreground "forest green" :weight bold)
+              ("PHONE" :foreground "forest green" :weight bold))))
