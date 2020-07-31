@@ -4,9 +4,9 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
  (filename . "~/notebook/todo.org")
- (front-context-string . "** TODO 学习泛型并形成b")
- (rear-context-string . ":\n\n* TODO TASKS\n")
- (position . 1172))
+ (front-context-string . "** 爱宝书项目\n   DEAD")
+ (rear-context-string . "947D1\n  :END:\n\n\n")
+ (position . 1365))
 ("org-capture-last-stored"
  (filename . "~/notebook/inbox.org")
  (front-context-string . "* TODO [#B] test")

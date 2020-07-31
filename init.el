@@ -233,7 +233,7 @@
 
 (setq org-mobile-inbox-for-pull "~/notebook/inbox.org")
 
-(setq org-mobile-files (list "~/notebook/todo.org"  "~/notebook/inbox.org"))
+(setq org-mobile-files (list "~/notebook/todo.org" "~/notebook/blog.org"  "~/notebook/inbox.org"))
 ;; 使用smart-input-source前需先安装macism，这个是切换mac中输入法的工具
 ;; 配置smart-input-source,20200725目前最新版的包名已经改成sis，包括方法前缀均已改变
 (smart-input-source-ism-lazyman-config
