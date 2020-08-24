@@ -193,7 +193,7 @@
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
 (set-fontset-font (frame-parameter nil 'font)
 charset
-(font-spec :family "Microsoft Yahei" :size 15)))
+(font-spec :family "Microsoft Yahei" :size 16)))
 
 ;; Enable Evil 不使用evil-mode了，总是误操作
 (require 'evil)
@@ -235,16 +235,14 @@ charset
 (setq smart-input-source-external-ism "im-select.exe") ; for windows 命令行切换输入法工具
 (setq smart-input-source-english "1033")
 (setq-default smart-input-source-other "2052")
-
-(smart-input-source-global-auto-english-mode t)  
-(smart-input-source-global-preserve-mode t)
-
-(dolist (hook '(text-mode-hook prog-mode-hook org-mode-hook))
- (add-hook hook #'smart-input-source-follow-context-mode))
-
-(dolist (hook '(text-mode-hook prog-mode-hook org-mode-hook))
- (add-hook hook #'smart-input-source-inline-english-mode))
-
+;; enable the /cursor color/ mode
+(smart-input-source-global-cursor-color-mode t)
+;; enable the /respect/ mode
+(smart-input-source-global-respect-mode t)
+;; enable the /follow context/ mode for all buffers
+(smart-input-source-global-follow-context-mode t)
+;; enable the /inline english/ mode for all buffers
+(smart-input-source-global-inline-mode t)
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
