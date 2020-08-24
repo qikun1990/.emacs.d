@@ -186,12 +186,14 @@
 (yas-global-mode 1)
 
 ;; 中英文混排表格对齐
-(set-default-font "Consolas")
-(set-fontset-font "fontset-default" 'chinese-gbk "微软雅黑")
-
-(setq face-font-rescale-alist '(("宋体" . 1.2)
-                ("微软雅黑" . 1.1)
-                )) 
+;; Setting English Font
+(set-face-attribute
+'default nil :font "Consolas 11")
+;; Chinese Font
+(dolist (charset '(kana han symbol cjk-misc bopomofo))
+(set-fontset-font (frame-parameter nil 'font)
+charset
+(font-spec :family "Microsoft Yahei" :size 15)))
 
 ;; Enable Evil 不使用evil-mode了，总是误操作
 (require 'evil)
