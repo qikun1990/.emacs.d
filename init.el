@@ -236,9 +236,9 @@
 (setq org-mobile-files (list "~/notebook/todo.org" "~/notebook/blog.org"  "~/notebook/inbox.org"))
 ;; 使用smart-input-source前需先安装macism，这个是切换mac中输入法的工具
 ;; 配置smart-input-source,20200725目前最新版的包名已经改成sis，包括方法前缀均已改变
-(smart-input-source-ism-lazyman-config
-"com.apple.keylayout.ABC"
-"com.apple.inputmethod.SCIM.ITABC")
+(setq smart-input-source-external-ism "im-select.exe") ; for windows 命令行切换输入法工具
+(setq smart-input-source-english-input-source "1033")
+(setq-default smart-input-source-other-input-source "2052")
 ;; enable the /cursor color/ mode
 (smart-input-source-global-cursor-color-mode t)
 ;; enable the /respect/ mode
