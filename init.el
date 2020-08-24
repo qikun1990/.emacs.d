@@ -186,18 +186,12 @@
 (yas-global-mode 1)
 
 ;; 中英文混排表格对齐
-(setq fonts
-      (cond ((eq system-type 'darwin)     '("Monaco"    "STHeiti"))
-            ((eq system-type 'gnu/linux)  '("Menlo"     "WenQuanYi Zen Hei"))
-            ((eq system-type 'windows-nt) '("Consolas"  "Microsoft Yahei"))))
-(set-face-attribute 'default nil :font
-                    (format "%s:pixelsize=%d" (car fonts) 14))
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-  (set-fontset-font (frame-parameter nil 'font) charset
-                    (font-spec :family (car (cdr fonts)))))
-;; Fix chinese font width and rescale
-(setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2) ("STHeiti". 1.2)))
+(set-default-font "Consolas")
+(set-fontset-font "fontset-default" 'chinese-gbk "微软雅黑")
 
+(setq face-font-rescale-alist '(("宋体" . 1.2)
+                ("微软雅黑" . 1.1)
+                )) 
 
 ;; Enable Evil 不使用evil-mode了，总是误操作
 (require 'evil)
