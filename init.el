@@ -84,7 +84,7 @@
 ;; 快速打开todo文件
 (defun open-todo-file()
   (interactive)
-  (find-file "~/notebook/todo.org"))
+  (find-file "d:/notebook/todo.org"))
 
 ;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
 (global-set-key (kbd "<f8>") 'open-todo-file)
@@ -167,7 +167,7 @@
 ;;	 "* TODO [#B] %?\n  %i\n"
 ;;	 :empty-lines 1)))
 (setq org-capture-templates
-      '(("t" "TODO" entry (file "~/notebook/inbox.org")
+      '(("t" "TODO" entry (file "d:/notebook/inbox.org")
 	 "* TODO [#B] %?\n  %i\n"
 	 :empty-lines 1)))
 ;; 设置添加待办事项的快捷键
@@ -223,13 +223,13 @@ charset
 	(lambda ()
 		(notify-osx "Pomodoro Killed" "One does not simply kill a pomodoro!")))
 ;; 配置mobile-org
-(setq org-directory "~/notebook/")
+(setq org-directory "d:/notebook/")
 
-(setq org-mobile-directory "~/notebook/org-mobile")
+(setq org-mobile-directory "d:/notebook/org-mobile")
 
-(setq org-mobile-inbox-for-pull "~/notebook/inbox.org")
+(setq org-mobile-inbox-for-pull "d:/notebook/inbox.org")
 
-(setq org-mobile-files (list "~/notebook/todo.org" "~/notebook/blog.org"  "~/notebook/inbox.org"))
+(setq org-mobile-files (list "d:/notebook/todo.org" "d:/notebook/blog.org"  "d:/notebook/inbox.org"))
 ;; 使用smart-input-source前需先安装macism，这个是切换mac中输入法的工具
 ;; 配置smart-input-source,20200725目前最新版的包名已经改成sis，包括方法前缀均已改变
 (setq smart-input-source-external-ism "im-select.exe") ; for windows 命令行切换输入法工具
