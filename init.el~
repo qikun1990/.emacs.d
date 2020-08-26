@@ -11,6 +11,7 @@
 
 ;; Add Packages
 (defvar my/packages '(
+		      anki-editor
 		      ;; 代码块
 		      yasnippet
 		      ;; search
@@ -84,7 +85,7 @@
 ;; 快速打开todo文件
 (defun open-todo-file()
   (interactive)
-  (find-file "~/notebook/todo.org"))
+  (find-file "d:/notebook/todo.org"))
 
 ;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
 (global-set-key (kbd "<f8>") 'open-todo-file)
@@ -113,7 +114,7 @@
  '(nyan-mode t)
  '(package-selected-packages
    (quote
-    (smart-input-source org-pomodoro evil undo-tree nyan-mode company))))
+    (org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -155,17 +156,21 @@
 (setq org-src-fontify-natively t)
 
 ;; 设置默认 Org Agenda 文件目录
-(setq org-agenda-files '("~/notebook/todo.org"))
+;; (setq org-agenda-files '("d:/notebook/todo.org"))
+(setq org-agenda-files (quote ("d:/notebook")))
 
 ;; 设置 org-agenda 打开快捷键
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; 配置代码来设置一个模板（其中设置了待办事项的 优先级还有触发键）
+;;(setq org-capture-templates
+;;      '(("t" "TODO" entry (file+headline "~/notebook/todo.org" "工作安排")
+;;	 "* TODO [#B] %?\n  %i\n"
+;;	 :empty-lines 1)))
 (setq org-capture-templates
-      '(("t" "TODO" entry (file+headline "~/notebook/todo.org" "工作安排")
+      '(("t" "TODO" entry (file "d:/notebook/inbox.org")
 	 "* TODO [#B] %?\n  %i\n"
 	 :empty-lines 1)))
-
 ;; 设置添加待办事项的快捷键
 (global-set-key (kbd "C-c t") 'org-capture)
 
@@ -182,24 +187,20 @@
 (yas-global-mode 1)
 
 ;; 中英文混排表格对齐
-(setq fonts
-      (cond ((eq system-type 'darwin)     '("Monaco"    "STHeiti"))
-            ((eq system-type 'gnu/linux)  '("Menlo"     "WenQuanYi Zen Hei"))
-            ((eq system-type 'windows-nt) '("Consolas"  "Microsoft Yahei"))))
-(set-face-attribute 'default nil :font
-                    (format "%s:pixelsize=%d" (car fonts) 14))
+;; Setting English Font
+(set-face-attribute
+'default nil :font "Consolas 11")
+;; Chinese Font
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
-  (set-fontset-font (frame-parameter nil 'font) charset
-                    (font-spec :family (car (cdr fonts)))))
-;; Fix chinese font width and rescale
-(setq face-font-rescale-alist '(("Microsoft Yahei" . 1.2) ("WenQuanYi Micro Hei Mono" . 1.2) ("STHeiti". 1.2)))
-
+(set-fontset-font (frame-parameter nil 'font)
+charset
+(font-spec :family "Microsoft Yahei" :size 16)))
 
 ;; Enable Evil 不使用evil-mode了，总是误操作
 (require 'evil)
 (evil-mode 1)
 
-
+;; 配置番茄钟，在mac中可以alert提醒
 (defun notify-osx (title message)   
 	(call-process "terminal-notifier"		 
 		nil 0 nil		 
@@ -222,11 +223,41 @@
 (add-hook 'org-pomodoro-killed-hook    
 	(lambda ()
 		(notify-osx "Pomodoro Killed" "One does not simply kill a pomodoro!")))
+;; 配置mobile-org
+(setq org-directory "d:/notebook/")
 
-(setq org-directory "~/notebook/")
+(setq org-mobile-directory "d:/notebook/org-mobile")
 
-(setq org-mobile-directory "~/notebook/org-mobile")
+(setq org-mobile-inbox-for-pull "d:/notebook/inbox.org")
 
-(setq org-mobile-inbox-for-pull "~/notebook/inbox.org")
+(setq org-mobile-files (list "d:/notebook/todo.org" "d:/notebook/blog.org"  "d:/notebook/inbox.org"))
+;; 使用smart-input-source前需先安装macism，这个是切换mac中输入法的工具
+;; 配置smart-input-source,20200725目前最新版的包名已经改成sis，包括方法前缀均已改变
+(setq smart-input-source-external-ism "im-select.exe") ; for windows 命令行切换输入法工具
+(setq smart-input-source-english "1033")
+(setq-default smart-input-source-other "2052")
+;; enable the /cursor color/ mode
+(smart-input-source-global-cursor-color-mode t)
+;; enable the /respect/ mode
+(smart-input-source-global-respect-mode t)
+;; enable the /follow context/ mode for all buffers
+(smart-input-source-global-follow-context-mode t)
+;; enable the /inline english/ mode for all buffers
+(smart-input-source-global-inline-mode t)
 
-(setq org-mobile-files (list "~/notebook/todo.org"))
+(setq org-todo-keywords
+      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
+
+(setq org-todo-keyword-faces
+      (quote (("TODO" :foreground "red" :weight bold)
+              ("NEXT" :foreground "blue" :weight bold)
+              ("DONE" :foreground "forest green" :weight bold)
+              ("WAITING" :foreground "orange" :weight bold)
+              ("HOLD" :foreground "magenta" :weight bold)
+              ("CANCELLED" :foreground "forest green" :weight bold)
+              ("MEETING" :foreground "forest green" :weight bold)
+              ("PHONE" :foreground "forest green" :weight bold))))
+
+(setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                 (org-agenda-files :maxlevel . 9))))
