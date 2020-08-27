@@ -261,3 +261,4 @@ charset
 
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9))))
+(setq anki-editor-create-decks t)
