@@ -261,4 +261,5 @@ charset
 
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9))))
+;; 解决anki-editor中文报错的问题
 (setq anki-editor-create-decks t)
