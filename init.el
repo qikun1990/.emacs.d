@@ -60,6 +60,13 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; 显示时间
+(display-time-mode 1) ;; 常显
+(setq display-time-24hr-format t) ;;格式
+(setq display-time-day-and-date t) ;;显示时间、星期、日期
+
+;; 隐藏菜单栏
+(menu-bar-mode 0)
 ;; 关闭工具栏，tool-bar-mode 即为一个 Minor Mode
 (tool-bar-mode -1)
 
