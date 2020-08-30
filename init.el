@@ -270,3 +270,5 @@ charset
                                  (org-agenda-files :maxlevel . 9))))
 ;; 解决anki-editor中文报错的问题
 (setq anki-editor-create-decks t)
+;; Emacs支持外部程序的粘贴
+(setq x-select-enable-clipboard t)
