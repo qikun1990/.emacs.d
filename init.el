@@ -11,6 +11,7 @@
 
 ;; Add Packages
 (defvar my/packages '(
+		      sound-wav
 		      magit
 		      anki-editor
 		      ;; 代码块
@@ -209,15 +210,9 @@ charset
 (evil-mode 1)
 
 ;; 配置番茄钟，在mac中可以alert提醒
-(defun notify-osx (title message)   
-	(call-process "terminal-notifier"		 
-		nil 0 nil		 
-		"-group" "Emacs"		 
-		"-title" title		 
-		"-sender" "org.gnu.Emacs"		 
-		"-message" message		 
-		"-activate" "oeg.gnu.Emacs"))
-
+(defun notify-osx (title message)
+  (sound-wav-play "C:/Users/76783/AppData/Roaming/.emacs.d/sound/oh.wav")
+  )
 
 (add-hook 'org-pomodoro-finished-hook
 	(lambda ()
