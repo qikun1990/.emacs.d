@@ -4,9 +4,9 @@
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
  (filename . "d:/notebook/todo.org")
- (front-context-string . "** 阅读-52\n 不包括技术书")
- (rear-context-string . " - [ ] 同步字帖样式调整\n")
- (position . 3182))
+ (front-context-string . "** DONE [#B] ema")
+ (rear-context-string . "置windows平台番茄钟提示\n")
+ (position . 7583))
 ("org-capture-last-stored"
  (filename . "d:/notebook/inbox.org")
  (front-context-string . "* TODO [#B] 测试一下")
