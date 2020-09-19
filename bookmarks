@@ -3,13 +3,13 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-refile-last-stored"
- (filename . "~/notebook/todo.org")
- (front-context-string . "** 爱宝书项目\n   DEAD")
- (rear-context-string . "947D1\n  :END:\n\n\n")
- (position . 1365))
+ (filename . "d:/notebook/todo.org")
+ (front-context-string . "** 阅读-52\n 不包括技术书")
+ (rear-context-string . " - [ ] 同步字帖样式调整\n")
+ (position . 3182))
 ("org-capture-last-stored"
- (filename . "~/notebook/inbox.org")
- (front-context-string . "* TODO [#B] test")
- (rear-context-string . "-26 Sun 00:53]\n\n")
- (position . 589))
+ (filename . "d:/notebook/inbox.org")
+ (front-context-string . "* TODO [#B] 测试一下")
+ (rear-context-string . "rdpress开发一个CMS\n\n")
+ (position . 98))
 )

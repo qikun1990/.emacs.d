@@ -11,6 +11,7 @@
 
 ;; Add Packages
 (defvar my/packages '(
+		      magit
 		      anki-editor
 		      ;; 代码块
 		      yasnippet
