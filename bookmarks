@@ -9,7 +9,7 @@
  (position . 7583))
 ("org-capture-last-stored"
  (filename . "d:/notebook/inbox.org")
- (front-context-string . "* TODO [#B] 测试一下")
- (rear-context-string . "rdpress开发一个CMS\n\n")
- (position . 98))
+ (front-context-string . "* TODO [#B] 社保代缴")
+ (rear-context-string . "ixfc.net/ 字帖网站\n\n")
+ (position . 1059))
 )
