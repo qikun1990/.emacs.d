@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name:BLOG文章模板
+# key: blog
+# --
+** TODO ${1: 文章标题}
+   :PROPERTIES:
+   :EXPORT_FILE_NAME: ${2: 文章URL}
+   :EXPORT_DATE: ${3: 2020-10-01}
+   :END:
+${4: 文章简介}
+#+hugo: more
+*** $0
+
