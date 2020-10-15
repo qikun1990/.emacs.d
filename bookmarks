@@ -2,14 +2,19 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org-refile-last-stored"
+(("org-capture-last-stored-marker"
  (filename . "d:/notebook/todo.org")
- (front-context-string . "** DONE [#B] ema")
- (rear-context-string . "置windows平台番茄钟提示\n")
- (position . 7583))
+ (front-context-string . "** TODO [#B] 爱宝L")
+ (rear-context-string . "3aaca\n   :END:\n\n")
+ (position . 13111))
+("org-refile-last-stored"
+ (filename . "d:/notebook/todo.org")
+ (front-context-string . "** DONE imagemag")
+ (rear-context-string . "确定的话建议使用chmod。 \n")
+ (position . 48741))
 ("org-capture-last-stored"
  (filename . "d:/notebook/inbox.org")
- (front-context-string . "* TODO [#B] 社保代缴")
- (rear-context-string . "ixfc.net/ 字帖网站\n\n")
- (position . 1059))
+ (front-context-string . "* TODO [#B] jenk")
+ (rear-context-string . "9:07]\n   :END:\n\n")
+ (position . 903))
 )
