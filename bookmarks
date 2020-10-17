@@ -9,12 +9,12 @@
  (position . 13111))
 ("org-refile-last-stored"
  (filename . "d:/notebook/todo.org")
- (front-context-string . "** DONE imagemag")
- (rear-context-string . "确定的话建议使用chmod。 \n")
- (position . 48741))
+ (front-context-string . "** DONE 软件项目版本号的")
+ (rear-context-string . "可以采取上面的方法来解决吧。 \n")
+ (position . 54590))
 ("org-capture-last-stored"
  (filename . "d:/notebook/inbox.org")
- (front-context-string . "* TODO [#B] jenk")
- (rear-context-string . "9:07]\n   :END:\n\n")
- (position . 903))
+ (front-context-string . "* TODO [#B] 查看Go")
+ (rear-context-string . "章导入是否覆盖content\n\n")
+ (position . 168))
 )
