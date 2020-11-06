@@ -123,7 +123,7 @@
  '(nyan-mode t)
  '(package-selected-packages
    (quote
-    (anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
+    (org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
