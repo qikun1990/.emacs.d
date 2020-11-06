@@ -9,9 +9,9 @@
  (position . 13111))
 ("org-refile-last-stored"
  (filename . "d:/notebook/todo.org")
- (front-context-string . "** 表格以及链接实例 \n|--")
- (rear-context-string . "l#orgfec45f4\n\n\n\n")
- (position . 67856))
+ (front-context-string . "** DONE 工作流页面搭建\n")
+ (rear-context-string . "文章导入是否覆盖content\n")
+ (position . 27243))
 ("org-capture-last-stored"
  (filename . "d:/notebook/inbox.org")
  (front-context-string . "* TODO [#B] 查看Go")
