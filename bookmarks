@@ -9,9 +9,9 @@
  (position . 13111))
 ("org-refile-last-stored"
  (filename . "d:/notebook/todo.org")
- (front-context-string . "** docker安装iMobi")
- (rear-context-string . "rgfec45f4\n\n\n\n \n\n")
- (position . 71802))
+ (front-context-string . "** org-roam配置org")
+ (rear-context-string . "：最后为这个规则命名，完成。\n\n")
+ (position . 81859))
 ("org-capture-last-stored"
  (filename . "d:/notebook/inbox.org")
  (front-context-string . "* TODO [#B] 查看Go")
