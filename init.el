@@ -123,7 +123,7 @@
  '(nyan-mode t)
  '(package-selected-packages
    (quote
-    (anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
+    (org-roam-server org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -291,3 +291,17 @@ charset
 (interactive)
 (revert-buffer t (not (buffer-modified-p)) t))
 (global-set-key (kbd "<f5>") 'refresh-file)
+(setq org-roam-directory "d:/notebook/org-roam")
+(add-hook 'after-init-hook 'org-roam-mode)
+(setq org-roam-server-host "127.0.0.1"
+      org-roam-server-port 9090
+      org-roam-server-export-inline-images t
+      org-roam-server-authenticate nil
+      org-roam-server-network-label-truncate t
+      org-roam-server-network-label-truncate-length 60
+      org-roam-server-network-label-wrap-length 20)
+(org-roam-server-mode)
+(require 'org-roam-protocol)
+;; server 配置
+(setq server-name "emacs-server-file")
+(server-start)
