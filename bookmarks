@@ -13,8 +13,8 @@
  (rear-context-string . "ntw.exe\" \"%1\" \n\n")
  (position . 82470))
 ("org-capture-last-stored"
- (filename . "d:/notebook/inbox.org")
- (front-context-string . "* TODO [#B] 查看Go")
- (rear-context-string . "章导入是否覆盖content\n\n")
- (position . 168))
+ (filename . "d:/notebook/org-roam/20201109231907-javascript.org")
+ (front-context-string . "#+title: javascr")
+ (rear-context-string)
+ (position . 1))
 )
