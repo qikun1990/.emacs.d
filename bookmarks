@@ -9,9 +9,9 @@
  (position . 13111))
 ("org-refile-last-stored"
  (filename . "d:/notebook/todo.org")
- (front-context-string . "** org-roam配置org")
- (rear-context-string . "：最后为这个规则命名，完成。\n\n")
- (position . 81859))
+ (front-context-string . "** imobitrax追踪系统")
+ (rear-context-string . "ntw.exe\" \"%1\" \n\n")
+ (position . 82470))
 ("org-capture-last-stored"
  (filename . "d:/notebook/inbox.org")
  (front-context-string . "* TODO [#B] 查看Go")

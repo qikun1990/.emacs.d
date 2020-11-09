@@ -305,3 +305,12 @@ charset
 ;; server 配置
 (setq server-name "emacs-server-file")
 (server-start)
+(setq org-roam-graph-executable "D:/package/graphviz-2.44.1-win32/Graphviz/bin/dot")
+(setq org-roam-graph-viewer "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe")
+
+(global-set-key (kbd "C-c n l") 'org-roam)
+(global-set-key (kbd "C-c n f") 'org-roam-find-file)
+(global-set-key (kbd "C-c n g") 'org-roam-graph)
+(global-set-key (kbd "C-c n i") 'org-roam-insert)
+(global-set-key (kbd "C-c n I") 'org-roam-insert-immediate)
+(global-set-key (kbd "C-c n c") 'org-roam-capture)
