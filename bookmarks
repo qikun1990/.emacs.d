@@ -13,8 +13,8 @@
  (rear-context-string . "ntw.exe\" \"%1\" \n\n")
  (position . 82470))
 ("org-capture-last-stored"
- (filename . "d:/notebook/org-roam/20201109231907-javascript.org")
- (front-context-string . "#+title: javascr")
+ (filename . "d:/notebook/org-roam/20201109234753-offer.org")
+ (front-context-string . "#+title: offer\n\n")
  (rear-context-string)
  (position . 1))
 )
