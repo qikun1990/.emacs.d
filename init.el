@@ -123,7 +123,7 @@
  '(nyan-mode t)
  '(package-selected-packages
    (quote
-    (org-roam-server org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
+    (org-ref helm-bibtex org-roam-bibtex org-noter use-package org-roam-server org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -314,3 +314,8 @@ charset
 (global-set-key (kbd "C-c n i") 'org-roam-insert)
 (global-set-key (kbd "C-c n I") 'org-roam-insert-immediate)
 (global-set-key (kbd "C-c n c") 'org-roam-capture)
+
+;; If you cloned the repository
+(add-to-list 'load-path "~/.emacs.d/projects/org-roam-bibtex/") ;Modify with your own path
+(require 'org-roam-bibtex)
+(add-hook 'after-init-hook #'org-roam-bibtex-mode)

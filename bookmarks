@@ -9,12 +9,12 @@
  (position . 13111))
 ("org-refile-last-stored"
  (filename . "d:/notebook/todo.org")
- (front-context-string . "** imobitrax追踪系统")
- (rear-context-string . "ntw.exe\" \"%1\" \n\n")
- (position . 82470))
+ (front-context-string . "** DONE [#B] 升级w")
+ (rear-context-string . "  0:23\n   :END:\n")
+ (position . 25912))
 ("org-capture-last-stored"
- (filename . "d:/notebook/org-roam/20201109234753-offer.org")
- (front-context-string . "#+title: offer\n\n")
+ (filename . "d:/notebook/org-roam/20201110225558-windows.org")
+ (front-context-string . "#+title: windows")
  (rear-context-string)
  (position . 1))
 )
