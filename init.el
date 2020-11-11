@@ -121,6 +121,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(nyan-mode t)
+ '(org-agenda-files
+   (quote
+    ("d:/notebook/org-roam/20201111121057-爱宝book.org" "d:/notebook/anki-nce3.org" "d:/notebook/blog.org" "d:/notebook/inbox.org" "d:/notebook/todo.org")))
  '(package-selected-packages
    (quote
     (org-ref helm-bibtex org-roam-bibtex org-noter use-package org-roam-server org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
