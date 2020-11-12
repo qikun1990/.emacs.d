@@ -297,7 +297,7 @@ charset
 (setq org-roam-directory "d:/notebook/org-roam")
 (add-hook 'after-init-hook 'org-roam-mode)
 (setq org-roam-server-host "127.0.0.1"
-      org-roam-server-port 9090
+      org-roam-server-port 9999
       org-roam-server-export-inline-images t
       org-roam-server-authenticate nil
       org-roam-server-network-label-truncate t
