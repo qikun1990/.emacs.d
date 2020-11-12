@@ -433,3 +433,6 @@ charset
   )
 
 
+
+(global-set-key (kbd "C-c n h") 'helm-bibtex)
+(global-set-key (kbd "C-c n r") 'helm-bibtex-with-local-bibliography)
