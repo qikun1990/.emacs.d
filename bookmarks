@@ -13,8 +13,8 @@
  (rear-context-string . "  0:23\n   :END:\n")
  (position . 25912))
 ("org-capture-last-stored"
- (filename . "d:/notebook/org-roam/20201110225558-windows.org")
- (front-context-string . "#+title: windows")
+ (filename . "d:/notebook/org-roam/20201111121057-爱宝book.org")
+ (front-context-string . "#+title: 爱宝BOOK\n")
  (rear-context-string)
  (position . 1))
 )

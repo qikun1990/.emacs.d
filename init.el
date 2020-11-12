@@ -126,7 +126,7 @@
     ("d:/notebook/org-roam/20201111121057-爱宝book.org" "d:/notebook/anki-nce3.org" "d:/notebook/blog.org" "d:/notebook/inbox.org" "d:/notebook/todo.org")))
  '(package-selected-packages
    (quote
-    (org-ref helm-bibtex org-roam-bibtex org-noter use-package org-roam-server org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
+    (company-org-roam org-ref helm-bibtex org-roam-bibtex org-noter use-package org-roam-server org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -322,3 +322,116 @@ charset
 (add-to-list 'load-path "~/.emacs.d/projects/org-roam-bibtex/") ;Modify with your own path
 (require 'org-roam-bibtex)
 (add-hook 'after-init-hook #'org-roam-bibtex-mode)
+
+(use-package company-org-roam
+  :ensure t
+  ;; You may want to pin in case the version from stable.melpa.org is not working 
+  ; :pin melpa
+  :config
+  (push 'company-org-roam company-backends))
+
+
+(setq
+   org_notes (concat "D:/notebook/org-roam/")
+   zot_bib (concat "D:/notebook/zotero/masterLib.bib")
+   org-directory org_notes
+   deft-directory org_notes
+   org-roam-directory org_notes
+   )
+
+(use-package deft
+  :commands deft
+  :init
+  (setq deft-default-extension "org"
+        ;; de-couples filename and note title:
+        deft-use-filename-as-title nil
+        deft-use-filter-string-for-filename t
+        ;; disable auto-save
+        deft-auto-save-interval -1.0
+        ;; converts the filter string into a readable file-name using kebab-case:
+        deft-file-naming-rules
+        '((noslash . "-")
+          (nospace . "-")
+          (case-fn . downcase)))
+  :config
+  (add-to-list 'deft-extensions "tex")
+  )
+
+(setq
+ bibtex-completion-notes-path "D:/notebook/org-roam/"
+ bibtex-completion-bibliography "D:/notebook/zotero/masterLib.bib"
+ bibtex-completion-pdf-field "file"
+ bibtex-completion-notes-template-multiple-files
+ (concat
+  "#+TITLE: ${title}\n"
+  "#+ROAM_KEY: cite:${=key=}\n"
+  "* TODO Notes\n"
+  ":PROPERTIES:\n"
+  ":Custom_ID: ${=key=}\n"
+  ":NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n"
+  ":AUTHOR: ${author-abbrev}\n"
+  ":JOURNAL: ${journaltitle}\n"
+  ":DATE: ${date}\n"
+  ":YEAR: ${year}\n"
+  ":DOI: ${doi}\n"
+  ":URL: ${url}\n"
+  ":END:\n\n"
+  )
+ )
+
+
+(use-package org-ref
+    :config
+    (setq
+         org-ref-completion-library 'org-ref-ivy-cite
+         org-ref-get-pdf-filename-function 'org-ref-get-pdf-filename-helm-bibtex
+         org-ref-default-bibliography (list "D:/notebook/zotero/masterLib.bib")
+         org-ref-bibliography-notes "D:/notebook/notes/bibnotes.org"
+         org-ref-note-title-format "* TODO %y - %t\n :PROPERTIES:\n  :Custom_ID: %k\n  :NOTER_DOCUMENT: %F\n :ROAM_KEY: cite:%k\n  :AUTHOR: %9a\n  :JOURNAL: %j\n  :YEAR: %y\n  :VOLUME: %v\n  :PAGES: %p\n  :DOI: %D\n  :URL: %U\n :END:\n\n"
+         org-ref-notes-directory "D:/notebook/org-roam/"
+         org-ref-notes-function 'orb-edit-notes
+    ))
+
+
+
+;; Since the org module lazy loads org-protocol (waits until an org URL is
+;; detected), we can safely chain `org-roam-protocol' to it.
+(use-package org-roam-protocol
+  :after org-protocol)
+
+
+(use-package org-roam-bibtex
+  :after (org-roam)
+  :hook (org-roam-mode . org-roam-bibtex-mode)
+  :config
+  (setq org-roam-bibtex-preformat-keywords
+   '("=key=" "title" "url" "file" "author-or-editor" "keywords"))
+  (setq orb-templates
+        '(("r" "ref" plain (function org-roam-capture--get-point)
+           ""
+           :file-name "${slug}"
+           :head "#+TITLE: ${=key=}: ${title}\n#+ROAM_KEY: ${ref}
+
+- tags ::
+- keywords :: ${keywords}
+
+\n* ${title}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n  :URL: ${url}\n  :AUTHOR: ${author-or-editor}\n  :NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n  :NOTER_PAGE: \n  :END:\n\n"
+
+           :unnarrowed t))))
+
+(use-package org-noter
+  :after (:any org pdf-view)
+  :config
+  (setq
+   ;; The WM can handle splits
+   org-noter-notes-window-location 'other-frame
+   ;; Please stop opening frames
+   org-noter-always-create-frame nil
+   ;; I want to see the whole file
+   org-noter-hide-other nil
+   ;; Everything is relative to the main notes file
+   org-noter-notes-search-path (list org_notes)
+   )
+  )
+
+
