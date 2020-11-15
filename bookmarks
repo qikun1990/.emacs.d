@@ -13,8 +13,8 @@
  (rear-context-string . "  0:23\n   :END:\n")
  (position . 25912))
 ("org-capture-last-stored"
- (filename . "d:/notebook/org-roam/20201113164252-公司事务.org")
- (front-context-string)
+ (filename . "d:/notebook/org-roam/20201113175510-使用linux中crontab定时任务按时备份lampp中mysql数据库.org")
+ (front-context-string . "#+title: 使用linux")
  (rear-context-string)
  (position . 1))
 )
