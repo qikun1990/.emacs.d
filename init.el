@@ -436,3 +436,6 @@ charset
 
 (global-set-key (kbd "C-c n h") 'helm-bibtex)
 (global-set-key (kbd "C-c n r") 'helm-bibtex-with-local-bibliography)
+
+(unless (server-running-p)
+  (org-roam-server-mode))
