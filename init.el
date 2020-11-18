@@ -126,7 +126,7 @@
     ("d:/notebook/blog.org" "d:/notebook/inbox.org" "d:/notebook/todo.org" "d:/notebook/org-roam/20201109152212-泛型.org" "d:/notebook/org-roam/20201109152234-多线程.org" "d:/notebook/org-roam/20201109152252-集合.org" "d:/notebook/org-roam/20201109154736-org_roam_rebuild_db.org" "d:/notebook/org-roam/20201109154808-emacs.org" "d:/notebook/org-roam/20201109160045-学习工作.org" "d:/notebook/org-roam/20201109203451-emacs常用快捷键.org" "d:/notebook/org-roam/20201109215834-linux.org" "d:/notebook/org-roam/20201109222742-http.org" "d:/notebook/org-roam/20201109223819-mysql.org" "d:/notebook/org-roam/20201109224449-org_roam.org" "d:/notebook/org-roam/20201109224518-org_roam如何删除节点.org" "d:/notebook/org-roam/20201109230547-编程语言.org" "d:/notebook/org-roam/20201109230750-shell.org" "d:/notebook/org-roam/20201109231907-javascript.org" "d:/notebook/org-roam/20201109232700-java.org" "d:/notebook/org-roam/20201109232930-编辑器.org" "d:/notebook/org-roam/20201109232956-vi.org" "d:/notebook/org-roam/20201109233114-数据库.org" "d:/notebook/org-roam/20201109234438-media_buy.org" "d:/notebook/org-roam/20201110225429-win10开机如何不进入系统选择界面.org" "d:/notebook/org-roam/20201110225533-操作系统.org" "d:/notebook/org-roam/20201110225558-windows.org" "d:/notebook/org-roam/20201111115139-offer.org" "d:/notebook/org-roam/20201111121057-爱宝book.org" "d:/notebook/org-roam/20201112193835-org_roam_bibtex文献管理.org" "d:/notebook/org-roam/20201112195352-seo.org" "d:/notebook/org-roam/20201113154546-上海公司注册.org" "d:/notebook/org-roam/20201113164252-公司事务.org")))
  '(package-selected-packages
    (quote
-    (company-org-roam org-ref helm-bibtex org-roam-bibtex org-noter use-package org-roam-server org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
+    (web-mode emmet-mode company-org-roam org-ref helm-bibtex org-roam-bibtex org-noter use-package org-roam-server org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -439,3 +439,11 @@ charset
 
 (unless (server-running-p)
   (org-roam-server-mode))
+
+(add-to-list 'auto-mode-alist '("\\.html$" . 'emmet-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-hook 'web-mode-hook 'emmet-mode)
+(add-to-list 'load-path "~/.emacs.d/projects/highlight-matching-tag/") ;Modify with your own path
+(require 'highlight-matching-tag)
+(highlight-matching-tag 1)
+
