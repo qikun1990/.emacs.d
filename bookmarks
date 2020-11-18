@@ -13,8 +13,8 @@
  (rear-context-string . "  0:23\n   :END:\n")
  (position . 25912))
 ("org-capture-last-stored"
- (filename . "d:/notebook/org-roam/20201115220802-响应式web设计_viewport.org")
- (front-context-string . "#+title: 响应式web设")
- (rear-context-string)
- (position . 1))
+ (filename . "d:/notebook/inbox.org")
+ (front-context-string . "* TODO [#B] ngin")
+ (rear-context-string . "ine-switches/ \n\n")
+ (position . 24374))
 )
