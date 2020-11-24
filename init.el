@@ -449,8 +449,3 @@ charset
 
 (require 'linum-relative)
 (linum-relative-on)
-
-;; 把org-agenda-files都纳入clocktable管控
-(defun efls/org-files-productive ()
- "Return productive org files."
-(org-agenda-files))
