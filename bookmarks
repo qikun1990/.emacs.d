@@ -13,8 +13,8 @@
  (rear-context-string . " :next_actions:\n")
  (position . 107))
 ("org-capture-last-stored"
- (filename . "d:/notebook/org-roam/20201124165420-日工作量统计.org")
- (front-context-string . "#+title: 日工作量统计\n")
+ (filename . "d:/notebook/org-roam/20201126145002-vortex_40_day_tutorial_2019.org")
+ (front-context-string . "#+title: Vortex'")
  (rear-context-string)
  (position . 1))
 )
