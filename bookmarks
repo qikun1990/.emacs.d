@@ -13,8 +13,8 @@
  (rear-context-string . " :next_actions:\n")
  (position . 107))
 ("org-capture-last-stored"
- (filename . "d:/notebook/org-roam/20201126145002-vortex_40_day_tutorial_2019.org")
- (front-context-string . "#+title: Vortex'")
- (rear-context-string)
- (position . 1))
+ (filename . "d:/notebook/inbox.org")
+ (front-context-string . "* TODO [#B] 阅读sl")
+ (rear-context-string . "mpaign with lp\n\n")
+ (position . 24596))
 )

@@ -449,3 +449,10 @@ charset
 
 (require 'linum-relative)
 (linum-relative-on)
+
+(setq org-roam-capture-templates
+  '(("d" "default" plain (function org-roam-capture--get-point)
+     "%?"
+     :file-name "${slug}"
+     :head "#+TITLE: ${title}\n"
+     :unnarrowed t)))
