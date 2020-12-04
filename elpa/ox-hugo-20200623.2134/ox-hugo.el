@@ -2292,9 +2292,11 @@ and rewrite link paths to make blogging more seamless."
                                   (if (string-match ".*\\.org::\\(#.*\\)" raw-link)
                                       (match-string-no-properties 1 raw-link)
                                     "")))
-                             (format "{{< relref \"%s%s\" >}}"
+                             (format "{{< relref \"%s%s%s%s\" >}}"
                                      (file-name-sans-extension
                                       (file-name-nondirectory path1))
+									 "#"
+									 desc
                                      raw-link-minus-org-file))
                          (org-hugo--attachment-rewrite-maybe path1 info))))
                     (t

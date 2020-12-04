@@ -13,8 +13,8 @@
  (rear-context-string . " :next_actions:\n")
  (position . 107))
 ("org-capture-last-stored"
- (filename . "d:/notebook/inbox.org")
- (front-context-string . "* TODO [#B] 阅读sl")
- (rear-context-string . "mpaign with lp\n\n")
- (position . 24596))
+ (filename . "d:/notebook/org-roam/20201204123744-vlookup.org")
+ (front-context-string . "#+title: vlookup")
+ (rear-context-string)
+ (position . 1))
 )
