@@ -456,3 +456,9 @@ charset
      :file-name "${slug}"
      :head "#+TITLE: ${title}\n"
      :unnarrowed t)))
+
+
+(global-set-key (kbd "C-c C-.") 'org-insert-structure-template)
+(add-to-list 'org-structure-template-alist '("r" . "src R"))
+(add-to-list 'org-structure-template-alist '("j" . "src JAVA"))
+(add-to-list 'org-structure-template-alist '("js" . "src JAVASCRIPT"))
