@@ -534,6 +534,28 @@ charset
 (setq google-translate-default-target-language "zh-CN")
 (setq-default google-translate-enable-ido-completion t)
 ;; 配置快捷键
-(global-set-key "\C-ct" 'google-translate-at-point)
-(global-set-key "\C-cT" 'google-translate-query-translate)
-(global-set-key (kbd "\C-cq") 'google-translate-smooth-translate)
+;;(global-set-key "\C-ct" 'google-translate-at-point)
+;;(global-set-key "\C-cT" 'google-translate-query-translate)
+;;(global-set-key (kbd "\C-cq") 'google-translate-smooth-translate)
+
+(setq-default target-lang "fr")
+(setq-default source-lang "en")
+
+(defun insert-next-line (translation)
+  "1. move to end of the line.
+  2. insert newline with index"
+  (interactive)
+  (let ((oldpos (point)))
+    (end-of-line)
+    (newline-and-indent))
+  (insert translation)
+  )
+
+(defun translation-tookit()
+  (interactive)
+(insert-next-line 
+ (google-translate-json-translation (google-translate-request source-lang target-lang (thing-at-point 'line)))
+ )
+)
+
+(global-set-key (kbd "\C-ct") 'translation-tookit)
