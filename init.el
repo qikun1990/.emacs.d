@@ -538,7 +538,8 @@ charset
 ;;(global-set-key "\C-cT" 'google-translate-query-translate)
 ;;(global-set-key (kbd "\C-cq") 'google-translate-smooth-translate)
 
-(setq-default target-lang "fr")
+(setq-default target-lang "it")
+;;(setq-default target-lang "fr")
 (setq-default source-lang "en")
 
 (defun insert-next-line (translation)
@@ -559,3 +560,19 @@ charset
 )
 
 (global-set-key (kbd "\C-ct") 'translation-tookit)
+
+
+(let ((style "google"))
+ (setq format-command (format "astyle --style=%s" style)))
+
+(global-auto-revert-mode t)
+
+(defun format-code ()
+ "Format current buffer"
+ (interactive)
+ (let ((file (buffer-file-name)))
+  (save-excursion
+    (shell-command-to-string (format "%s %s" format-command file))
+    (message "Code formatted"))))
+
+(global-set-key "\C-f" 'format-code)
