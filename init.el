@@ -584,7 +584,7 @@ charset
  (interactive)
  (let ((file (buffer-file-name)))
   (save-excursion
-    (shell-command-to-string (format "%s %s" "CoolFormat -f " file))
+    (shell-command-to-string (format "%s %s" "coolformat -f" file))
     (message "Code formatted"))))
 
-(global-set-key "\C-cf" 'format-code-coolformat)
+(global-set-key (kbd "C-c C-f") 'format-code-coolformat)
