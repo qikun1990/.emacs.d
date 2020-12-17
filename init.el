@@ -576,3 +576,15 @@ charset
     (message "Code formatted"))))
 
 (global-set-key "\C-f" 'format-code)
+
+
+
+(defun format-code-coolformat ()
+ "Format current buffer"
+ (interactive)
+ (let ((file (buffer-file-name)))
+  (save-excursion
+    (shell-command-to-string (format "%s %s" "CoolFormat -f " file))
+    (message "Code formatted"))))
+
+(global-set-key "\C-cf" 'format-code-coolformat)
