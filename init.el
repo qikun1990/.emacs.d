@@ -442,6 +442,7 @@ charset
 
 (add-to-list 'auto-mode-alist '("\\.html$" . 'emmet-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html" . web-mode))
 (add-hook 'web-mode-hook 'emmet-mode)
 (add-to-list 'load-path "~/.emacs.d/projects/highlight-matching-tag/") ;Modify with your own path
 (require 'highlight-matching-tag)
