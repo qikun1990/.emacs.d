@@ -1,0 +1,128 @@
+npm install gulp-print
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp --tasks
+gulp --tasks
+gulp
+gulp
+gulp
+gulp
+ls
+cd output/
+ls
+vi test.min.js 
+find-file test.min.js 
+cd ../
+npm install -g live-server 
+ls
+ls -al
+more package.json
+find-file package.json
+gulp
+gulp
+gulp
+ls
+find-file package.json
+npm run server
+npm run server
+npm run server
+npm run server
+npm run server
+npm run server
+netstat
+npm install gulp-live-server
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+npm install connect-livereload --save-dev
+gulp
+npm install livereload-js --save
+gulp
+gulp
+gulp
+gulp
+npm install gulp-livereload
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+npm install gulp-connect
+npm install gulp-connect
+gulp
+ls
+cp gulpfile.js gulpfile.js.bak02
+ls
+clear
+gulp
+gulp default
+gulp task01
+gulp task1
+gulp task01 default
+gulp
+y
+gulp --version
+npm install --save-dev browser-sync
+gulp
+npm install browser-sync gulp --save-dev
+gulp
+gulp --tasks
+gulp serve
+gulp
+gulp serve
+gulp serve
+gulp serve
+gulp serve
+gulp serve
+gulp serve
+gulp serve
+ls
+find-file gulpfile.js.bak01
+gulp serve
+gulp serve
+gulp serve
+gulp serve
+gulp serve
+gulp
+gulp
+gulp
+gulp serve
+gulp serve
+ls
+find-file gulpfile.js.bak02
+find-file gulpfile.js.bak02
+gulp serve
+gulp serve
+gulp serve
+gulp serve
+npm install run-sequence
+gulp serve
+gulp serve
+gulp serve watch
+gulp serve
+gulp serve
+gulp serve
+gulp serve
+gulp serve watch
+gulp serve watch
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp --tasks
+gulp bsReload
