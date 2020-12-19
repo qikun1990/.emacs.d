@@ -601,3 +601,5 @@ charset
              (propertize " " 'display `((margin right-margin) ,nstr))))))))
 
 
+
+(global-set-key (kbd "<f9>") 'ranger)
