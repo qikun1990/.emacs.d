@@ -163,6 +163,15 @@
 ;; 然后使用下面的配置使其每次打开编辑器时加载主题
 (load-theme 'monokai 1)
 
+;;行号背景
+(set-face-background 'linum "#000000")
+;;行号前景
+(set-face-foreground 'linum "#CD661D")
+;;当前行背景
+(set-face-background 'hl-line "#BEBEBE")
+;;当前行前景
+(set-face-foreground 'hl-line "#000000")
+
 ;; 添加 Org-mode 文本内语法高亮
 (require 'org)
 (setq org-src-fontify-natively t)
