@@ -1,12 +1,3 @@
-gulp serve watch
-gulp serve watch
-gulp serve watch
-gulp serve watch
-gulp
-gulp default
-gulp
-gulp
-npm install gulp-babel
 gulp
 ls -al
 find-file package.json
@@ -125,4 +116,13 @@ ls
 ls
 gulp
 ls
+gulp
+cd 
+../
+ls
+cd ../
+ls
+cd my-project/
+ls
+gulp
 gulp
