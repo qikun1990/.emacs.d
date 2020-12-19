@@ -2,8 +2,6 @@ gulp serve watch
 gulp serve watch
 gulp serve watch
 gulp serve watch
-gulp serve watch
-gulp serve watch
 gulp
 gulp default
 gulp
@@ -124,5 +122,7 @@ gulp beautifyCode
 ls
 ls
 ls
+ls
+gulp
 ls
 gulp
