@@ -168,9 +168,9 @@
 ;;行号前景
 (set-face-foreground 'linum "#CD661D")
 ;;当前行背景
-(set-face-background 'hl-line "yellow")
+(set-face-background 'hl-line "red")
 ;;当前行前景
-(set-face-foreground 'hl-line "red")
+(set-face-foreground 'hl-line "black")
 
 ;; 添加 Org-mode 文本内语法高亮
 (require 'org)
