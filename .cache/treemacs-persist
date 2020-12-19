@@ -7,3 +7,6 @@
 * my-project
 ** my-project
  - path :: c:/Users/76783/my-project
+* No Perspective
+** .emacs.d
+ - path :: ~/.emacs.d
