@@ -591,7 +591,7 @@ charset
 (global-set-key (kbd "C-c C-f") 'format-code-coolformat)
 (global-set-key (kbd "C-c ps") 'treemacs-switch-workspace)
 
-
+;; 相对行号和绝对行号同时显示
 (defun linum-relative-right-set-margin ()
   "Make width of right margin the same as left margin"
   (let* ((win (get-buffer-window))
