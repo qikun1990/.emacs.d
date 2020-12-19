@@ -94,7 +94,7 @@
 ;; 快速打开todo文件
 (defun open-todo-file()
   (interactive)
-  (find-file "d:/notebook/todo.org"))
+  (find-file "d:/notebook/org-roam/follow_along_120_days_and_30000rmb_to_start_affiliate_media_buy.org"))
 
 ;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
 (global-set-key (kbd "<f8>") 'open-todo-file)
