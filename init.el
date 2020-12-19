@@ -618,3 +618,5 @@ charset
         (set-text-properties 0 (length nstr) (text-properties-at 0 str) nstr)
         (overlay-put ov 'after-string
              (propertize " " 'display `((margin right-margin) ,nstr))))))))
+
+(global-linum-mode 1)
