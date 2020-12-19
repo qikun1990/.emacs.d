@@ -571,34 +571,8 @@ charset
 
 (global-set-key (kbd "\C-ct") 'translation-tookit)
 
-
-(let ((style "google"))
- (setq format-command (format "astyle --style=%s" style)))
-
-(global-auto-revert-mode t)
-
-(defun format-code ()
- "Format current buffer"
- (interactive)
- (let ((file (buffer-file-name)))
-  (save-excursion
-    (shell-command-to-string (format "%s %s" format-command file))
-    (message "Code formatted"))))
-
-(global-set-key "\C-f" 'format-code)
-
-
-
-(defun format-code-coolformat ()
- "Format current buffer"
- (interactive)
- (let ((file (buffer-file-name)))
-  (save-excursion
-    (shell-command-to-string (format "%s %s" "coolformat -f" file))
-    (message "Code formatted"))))
-
-(global-set-key (kbd "C-c C-f") 'format-code-coolformat)
 (global-set-key (kbd "C-c ps") 'treemacs-switch-workspace)
+
 (global-set-key (kbd "<f9>") 'treemacs)
 
 ;; 相对行号和绝对行号同时显示

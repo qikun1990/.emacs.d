@@ -1,14 +1,4 @@
 gulp
-ls -al
-find-file package.json
-gulp
-find-file package.json
-find-file package.json
-find-file package.json
-gulp
-gulp
-gulp
-gulp
 npm install gulp-sass
 gulp
 npm install gulp-autoprefixer
@@ -126,3 +116,13 @@ cd my-project/
 ls
 gulp
 gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+gulp
+npm install gulp-clean-css
+gulp
+gulp beautifyCode
