@@ -590,6 +590,7 @@ charset
 
 (global-set-key (kbd "C-c C-f") 'format-code-coolformat)
 (global-set-key (kbd "C-c ps") 'treemacs-switch-workspace)
+(global-set-key (kbd "<f9>") 'treemacs)
 
 ;; 相对行号和绝对行号同时显示
 (defun linum-relative-right-set-margin ()
