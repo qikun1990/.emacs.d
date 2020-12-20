@@ -548,7 +548,8 @@ charset
 ;;(global-set-key "\C-cT" 'google-translate-query-translate)
 ;;(global-set-key (kbd "\C-cq") 'google-translate-smooth-translate)
 
-(setq-default target-lang "it")
+(setq-default target-lang "zh")
+;;(setq-default target-lang "it")
 ;;(setq-default target-lang "fr")
 (setq-default source-lang "en")
 
