@@ -1,1 +1,1 @@
-("d:/notebook/" "d:/media-buyer/landing-page/sweepstakes/it-lucky-box-2/" "~/.emacs.d/" "c:/Users/76783/my-project/" "d:/media-buyer/landing-page/sweepstakes/" "c:/users/76783/my-project/")
+("d:/media-buyer/landing-page/sweepstakes/it-lucky-box-2/" "d:/notebook/" "~/.emacs.d/" "c:/Users/76783/my-project/" "d:/media-buyer/landing-page/sweepstakes/" "c:/users/76783/my-project/")
