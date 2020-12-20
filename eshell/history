@@ -1,12 +1,3 @@
-gulp
-npm install gulp-sass
-gulp
-npm install gulp-autoprefixer
-gulp
-npm install gulp-sourcemaps
-gulp
-npm isntall gulp-plumber
-gulp
 npm install gulp-sass-lint
 gulp
 npm  install gulp
@@ -126,3 +117,12 @@ gulp
 npm install gulp-clean-css
 gulp
 gulp beautifyCode
+cd c:/Documents\ and\ Settings/
+cd c:/users/76783/my-project/
+ls
+ls
+cd
+ls -al
+ls .
+ls -al .*
+ls -al  pro *

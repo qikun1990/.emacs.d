@@ -603,6 +603,8 @@ charset
 
 
 (global-set-key (kbd "<f9>") 'ranger)
-(projectile-global-mode)
-(global-set-key (kbd "<f6>") 'counsel-projectile)
-(global-set-key (kbd "<f7>") 'counsel-projectile-switch-project)
+;; projectile配置
+(projectile-mode +1)
+(global-set-key (kbd "C-c pf") 'counsel-projectile)
+(global-set-key (kbd "C-c ps") 'counsel-projectile-switch-project)
+(setq projectile-auto-discover 'nil)

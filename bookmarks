@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org-capture-last-stored-marker"
+(("ranger-e"
+ (filename . "d:/")
+ (front-context-string . "logseq/\n  drwxrw")
+ (rear-context-string . " 4k 12-09 20:48 ")
+ (position . 871))
+("org-capture-last-stored-marker"
  (filename . "d:/notebook/todo.org")
  (front-context-string . "** TODO [#B] 爱宝L")
  (rear-context-string . "3aaca\n   :END:\n\n")
