@@ -1,25 +1,3 @@
-npm install gulp-sass-lint
-gulp
-npm  install gulp
-npm  install gulp-cached
-gulp
-gulp
-gulp
-gulp
-gulp
-gulp
-gulp
-gulp
-gulp
-gulp
-gulp
-gulp
-.pipe(browserSync.stream())a    .pipe(browserSync.stream())sa
-browser-sync start
-gulp
-gulp
-gulp
-ls
 cp gulpfile.js gulpfile.js.bak1
 ls
 ls -al
@@ -126,3 +104,25 @@ ls -al
 ls .
 ls -al .*
 ls -al  pro *
+ls
+alias e 'find-file'
+ls
+e gulpfile.js 
+find-file gulpfile.js 
+e 
+e gulpfile.js 
+alias e 'find-file $*'
+e gulpfile.js 
+find-file gulpfile.js 
+alias e 'for i in ${eshell-flatten-list $*} {find-file $i}'
+e gulpfile.js 
+alias e 'for i in ${eshell-flatten-list $*} {find-file $i}'
+e
+e gulpfile.js 
+e gulpfile.js 
+alias cdgulp 'cd c:/users/76783/my-project/'
+cdgulp
+cd
+cdgulp
+cdgulp
+gulp

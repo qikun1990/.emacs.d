@@ -600,9 +600,9 @@ charset
         (overlay-put ov 'after-string
              (propertize " " 'display `((margin right-margin) ,nstr))))))))
 
+(global-set-key (kbd "C-c e") 'eshell)
 
-
-(global-set-key (kbd "<f9>") 'ranger)
+(global-set-key (kbd "C-c v") 'ranger)
 ;; projectile配置
 (projectile-mode +1)
 (global-set-key (kbd "C-c pf") 'counsel-projectile)
