@@ -1,15 +1,3 @@
-cp gulpfile.js gulpfile.js.bak1
-ls
-ls -al
-gulp
-gulp
-gulp
-gulp
-gulp
-npm install gulp-jshint
-gulp
-npm install gulp-jshint-cli
-npm installjshint-cli
 npm install jshint-cli
 gulp
 gulp
@@ -126,3 +114,15 @@ cd
 cdgulp
 cdgulp
 gulp
+cdgulp
+gulp
+gulp haha
+gulp --tasks
+gulp beautifyCode
+gulp
+gulp
+gulp --tasks
+gulp build
+gulp spritesmith
+gulp spritesmith
+gulp 
