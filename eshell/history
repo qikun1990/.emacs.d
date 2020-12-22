@@ -1,35 +1,3 @@
-npm install jshint-cli
-gulp
-gulp
-gulp
-gulp
-gulp
-npm install gulp-obfuscate
-gulp
-npm install gulp-minify-css
-gulp
-gulp
-npm install gulp-minify-html
-gulp
-npm install gulp-imagemin
-npm install imagmin-pngquant
-npm install imagemin-pngquant
-gulp
-gulp
-gulp
-npm install gulp-inline-source
-gulp
-clear
-gulp
-npm install gulp-htmlmin
-gulp
-gulp
-gulp
-gulp
-npm install gulp.spritesmith
-npm install --save-dev gulp.spritesmith
-gulp --status
-gulp gspritesmith
 gulp
 gulp
 gulp gspritesmith
@@ -126,3 +94,35 @@ gulp build
 gulp spritesmith
 gulp spritesmith
 gulp 
+cdgulp
+ ls
+e gulpfile.js 
+gulp
+gulp
+gulp --tasks
+gulp spritesmith
+gulp
+gulp spritesmith
+gulp
+gulp spritesmith
+gulp build
+gulp
+gulp spritesmith
+gulp spritesmith
+gulp build
+gulp 
+gulp build
+gulp build
+gulp
+gulp spritesmith
+gulp build
+gulp
+gulp build
+gulp build
+gulp
+gulp spritesmith
+gulp build
+gulp
+gulp spritesmith
+gulp build
+gulp
