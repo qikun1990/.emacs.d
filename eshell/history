@@ -1,21 +1,5 @@
 gulp
 gulp
-gulp gspritesmith
-gulp
-gulp gspritesmith
-gulp
-gulp gspritesmith
-gulp
-gulp gspritesmith
-gulp
-gulp gspritesmith
-gulp
-gulp gspritesmith
-gulp gspritesmith
-gulp gspritesmith
-gulp gspritesmith
-gulp
-gulp
 gulp
 gulp
 gulp
@@ -95,7 +79,7 @@ gulp spritesmith
 gulp spritesmith
 gulp 
 cdgulp
- ls
+ls
 e gulpfile.js 
 gulp
 gulp
@@ -124,5 +108,21 @@ gulp spritesmith
 gulp build
 gulp
 gulp spritesmith
+gulp build
+gulp
+gulp
+gulp --tasks
+gulp beauticode
+gulp beautifyCode
+gulp --tasks
+gulp spritesmith
+gulp spritesmith
+gulp spritesmith
+gulp
+gulp
+gulp beautifyCode
+gulp
+gulp beautifyCode
+gulp
 gulp build
 gulp
