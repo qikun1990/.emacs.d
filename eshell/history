@@ -1,9 +1,6 @@
 gulp
 gulp
 gulp
-gulp
-gulp
-gulp
 gulp beautyCode
 npm install beautifyCode
 npm install gulp-beautify
@@ -125,4 +122,7 @@ gulp
 gulp beautifyCode
 gulp
 gulp build
+gulp
+ls
+gulp
 gulp
