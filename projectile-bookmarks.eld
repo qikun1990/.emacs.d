@@ -1,1 +1,1 @@
-("~/.emacs.d/" "d:/notebook/" "d:/" "d:/media-buyer/" "c:/Users/76783/my-project/" "c:/users/76783/my-project/")
+("d:/notebook/" "~/.emacs.d/" "d:/" "d:/media-buyer/" "c:/Users/76783/my-project/" "c:/users/76783/my-project/")
