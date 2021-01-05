@@ -18,8 +18,8 @@
  (rear-context-string . " :next_actions:\n")
  (position . 107))
 ("org-capture-last-stored"
- (filename . "d:/notebook/inbox.org")
- (front-context-string . "* TODO [#B] emac")
- (rear-context-string . " 阅读如何聪明地做笔记PDF\n\n")
- (position . 24618))
+ (filename . "d:/notebook/org-roam/campaign操作记录.org")
+ (front-context-string . "#+TITLE: campaig")
+ (rear-context-string)
+ (position . 1))
 )
