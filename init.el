@@ -12,7 +12,7 @@
 ;; Add Packages
 (defvar my/packages '(
 		      sound-wav
-		      magit
+		      ;;magit
 		      anki-editor
 		      ;; 代码块
 		      yasnippet
@@ -26,12 +26,12 @@
 		      hungry-delete
 		      swiper
 		      counsel
-		      smartparens
+		      ;;smartparens
 		      ;; --- Major Mode ---
-		      js2-mode
+		      ;;js2-mode
 		      ;; --- Minor Mode ---
-		      nodejs-repl
-		      exec-path-from-shell
+		      ;;nodejs-repl
+		      ;;exec-path-from-shell
 		      ;; --- Themes ---
 		      monokai-theme
 		      ;; solarized-theme
@@ -305,32 +305,12 @@ charset
 (global-set-key (kbd "<f5>") 'refresh-file)
 (setq org-roam-directory "d:/notebook/org-roam")
 (add-hook 'after-init-hook 'org-roam-mode)
-(setq org-roam-server-host "127.0.0.1"
-      org-roam-server-port 9090
-      org-roam-server-export-inline-images t
-      org-roam-server-authenticate nil
-      org-roam-server-network-label-truncate t
-      org-roam-server-network-label-truncate-length 60
-      org-roam-server-network-label-wrap-length 20)
-(org-roam-server-mode)
-(require 'org-roam-protocol)
-;; server 配置
-(setq server-name "emacs-server-file")
-(server-start)
-(setq org-roam-graph-executable "D:/package/graphviz-2.44.1-win32/Graphviz/bin/dot")
-(setq org-roam-graph-viewer "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe")
 
 (global-set-key (kbd "C-c n l") 'org-roam)
 (global-set-key (kbd "C-c n f") 'org-roam-find-file)
-(global-set-key (kbd "C-c n g") 'org-roam-graph)
 (global-set-key (kbd "C-c n i") 'org-roam-insert)
 (global-set-key (kbd "C-c n I") 'org-roam-insert-immediate)
 (global-set-key (kbd "C-c n c") 'org-roam-capture)
-
-;; If you cloned the repository
-(add-to-list 'load-path "~/.emacs.d/projects/org-roam-bibtex/") ;Modify with your own path
-(require 'org-roam-bibtex)
-(add-hook 'after-init-hook #'org-roam-bibtex-mode)
 
 (use-package company-org-roam
   :ensure t
@@ -340,272 +320,34 @@ charset
   (push 'company-org-roam company-backends))
 
 
-(setq
-   org_notes (concat "D:/notebook/org-roam/")
-   zot_bib (concat "D:/notebook/zotero/masterLib.bib")
-   org-directory org_notes
-   deft-directory org_notes
-   org-roam-directory org_notes
-   )
-
-(use-package deft
-  :commands deft
-  :init
-  (setq deft-default-extension "org"
-        ;; de-couples filename and note title:
-        deft-use-filename-as-title nil
-        deft-use-filter-string-for-filename t
-        ;; disable auto-save
-        deft-auto-save-interval -1.0
-        ;; converts the filter string into a readable file-name using kebab-case:
-        deft-file-naming-rules
-        '((noslash . "-")
-          (nospace . "-")
-          (case-fn . downcase)))
-  :config
-  (add-to-list 'deft-extensions "tex")
-  )
-
-(setq
- bibtex-completion-notes-path "D:/notebook/org-roam/"
- bibtex-completion-bibliography "D:/notebook/zotero/masterLib.bib"
- bibtex-completion-pdf-field "file"
- bibtex-completion-notes-template-multiple-files
- (concat
-  "#+TITLE: ${title}\n"
-  "#+ROAM_KEY: cite:${=key=}\n"
-  "* TODO Notes\n"
-  ":PROPERTIES:\n"
-  ":Custom_ID: ${=key=}\n"
-  ":NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n"
-  ":AUTHOR: ${author-abbrev}\n"
-  ":JOURNAL: ${journaltitle}\n"
-  ":DATE: ${date}\n"
-  ":YEAR: ${year}\n"
-  ":DOI: ${doi}\n"
-  ":URL: ${url}\n"
-  ":END:\n\n"
-  )
- )
-
-
-(use-package org-ref
-    :config
-    (setq
-         org-ref-completion-library 'org-ref-ivy-cite
-         org-ref-get-pdf-filename-function 'org-ref-get-pdf-filename-helm-bibtex
-         org-ref-default-bibliography (list "D:/notebook/zotero/masterLib.bib")
-         org-ref-bibliography-notes "D:/notebook/notes/bibnotes.org"
-         org-ref-note-title-format "* TODO %y - %t\n :PROPERTIES:\n  :Custom_ID: %k\n  :NOTER_DOCUMENT: %F\n :ROAM_KEY: cite:%k\n  :AUTHOR: %9a\n  :JOURNAL: %j\n  :YEAR: %y\n  :VOLUME: %v\n  :PAGES: %p\n  :DOI: %D\n  :URL: %U\n :END:\n\n"
-         org-ref-notes-directory "D:/notebook/org-roam/"
-         org-ref-notes-function 'orb-edit-notes
-    ))
-
-;; Since the org module lazy loads org-protocol (waits until an org URL is
-;; detected), we can safely chain `org-roam-protocol' to it.
-(use-package org-roam-protocol
-  :after org-protocol)
-
-
-(use-package org-roam-bibtex
-  :after (org-roam)
-  :hook (org-roam-mode . org-roam-bibtex-mode)
-  :config
-  (setq org-roam-bibtex-preformat-keywords
-   '("=key=" "title" "url" "file" "author-or-editor" "keywords"))
-  (setq orb-templates
-        '(("r" "ref" plain (function org-roam-capture--get-point)
-           ""
-           :file-name "${slug}"
-           :head "#+TITLE: ${=key=}: ${title}\n#+ROAM_KEY: ${ref}
-
-- tags ::
-- keywords :: ${keywords}
-
-\n* ${title}\n  :PROPERTIES:\n  :Custom_ID: ${=key=}\n  :URL: ${url}\n  :AUTHOR: ${author-or-editor}\n  :NOTER_DOCUMENT: %(orb-process-file-field \"${=key=}\")\n  :NOTER_PAGE: \n  :END:\n\n"
-
-           :unnarrowed t))))
-
-(use-package org-noter
-  :after (:any org pdf-view)
-  :config
-  (setq
-   ;; The WM can handle splits
-   org-noter-notes-window-location 'other-frame
-   ;; Please stop opening frames
-   org-noter-always-create-frame nil
-   ;; I want to see the whole file
-   org-noter-hide-other nil
-   ;; Everything is relative to the main notes file
-   org-noter-notes-search-path (list org_notes)
-   )
-  )
 
 
 
-(global-set-key (kbd "C-c n h") 'helm-bibtex)
-(global-set-key (kbd "C-c n r") 'helm-bibtex-with-local-bibliography)
-
-(unless (server-running-p)
-  (org-roam-server-mode))
-
-(add-to-list 'auto-mode-alist '("\\.html$" . 'emmet-mode))
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.html" . web-mode))
-(add-hook 'web-mode-hook 'emmet-mode)
-(add-to-list 'load-path "~/.emacs.d/projects/highlight-matching-tag/") ;Modify with your own path
-(require 'highlight-matching-tag)
-(highlight-matching-tag 1)
-
-;;(require 'linum-relative)
-;;(linum-relative-on)
-
-(setq org-roam-capture-templates
-  '(("d" "default" plain (function org-roam-capture--get-point)
-     "%?"
-     :file-name "${slug}"
-     :head "#+TITLE: ${title}\n"
-     :unnarrowed t)))
 
 
-(global-set-key (kbd "C-c C-.") 'org-insert-structure-template)
-(add-to-list 'org-structure-template-alist '("r" . "src R"))
-(add-to-list 'org-structure-template-alist '("j" . "src JAVA"))
-(add-to-list 'org-structure-template-alist '("js" . "src JAVASCRIPT"))
-
-(use-package org-download
-  :ensure t 
-  ;;将截屏功能绑定到快捷键：Ctrl + Shift + Y
-  :bind ("C-S-y" . org-download-screenshot)
-  :config
-  (require 'org-download)
-  ;; Drag and drop to Dired
-  (add-hook 'dired-mode-hook 'org-download-enable)
-  )
-(setq-default org-download-image-dir "D:/notebook/images")
-
-;;; init-pomidor.el --- pomidor
-;;; https://github.com/TatriX/pomidor
-;;; Commentary:
-;;; Code:
-
-(use-package pomidor
-  :ensure t
-  :defer t
-  :init
-  (global-set-key "\M-p" #'pomidor)
-  :config
-  (setq
-   ;;pomidor-sound-tick nil ;; nil取消声音
-   ;;pomidor-sound-tack nil ;; nil取消声音
-   pomidor-sound-tick (expand-file-name (concat (getenv "HOME") "C:/Users/76783/AppData/Roaming/.emacs.d/sound/oh.wav"))
-   pomidor-sound-tack (expand-file-name (concat (getenv "HOME") "C:/Users/76783/AppData/Roaming/.emacs.d/sound/oh.wav"))
-   pomidor-sound-overwork (expand-file-name (concat (getenv "HOME") "C:/Users/76783/AppData/Roaming/.emacs.d/sound/oh.wav"))
-   pomidor-sound-break-over (expand-file-name (concat (getenv "HOME") "C:/Users/76783/AppData/Roaming/.emacs.d/sound/oh.wav"))
-   )
-
-  ;; log
-  ;; https://github.com/TatriX/pomidor/issues/20
-  (defadvice pomidor-stop (before pomidor-save-log activate)
-    "Log pomidor data to the D:/notebook/pomidor-log.csv file.
-     Columns: date,work,overwork,break"
-    (write-region (format "%s,%d,%d,%d\n"
-                          (format-time-string "%Y/%m/%d")
-                          (/ (time-to-seconds (pomidor-work-duration)) 60)
-                          (/ (time-to-seconds (or (pomidor-overwork-duration) 0)) 60)
-                          (/ (time-to-seconds (or (pomidor-break-duration) 0)) 60))
-                  nil
-                  "D:/notebook/pomidor-log.csv"
-                  'append))
-
-  (cond
-   ((eq system-type 'windows-nt)
-    (setq alert-default-style 'toaster)
-    )
-   ((eq system-type 'gnu/linux)
-    (setq alert-default-style 'libnotify)
-    ))
-  )
-(provide 'init-pomidor)
-;;; init-pomidor.el ends here
-
-(require 'google-translate)
-(require 'google-translate-default-ui)
-(defun google-translate--search-tkk () "Search TKK." (list 430675 2721866130))
-;;需要将谷歌翻译地址的.com修改成.cn,否则在国内无法进行访问
-(setq google-translate-base-url
-     "https://translate.google.cn/translate_a/single")
-(setq google-translate-listen-url
-     "https://translate.google.cn/translate_tts")
-(setq google-translate--tkk-url
-     "https://translate.google.cn")
-;;配置默认语言
-(setq google-translate-default-source-language "en")
-(setq google-translate-default-target-language "zh-CN")
-(setq-default google-translate-enable-ido-completion t)
-;; 配置快捷键
-;;(global-set-key "\C-ct" 'google-translate-at-point)
-;;(global-set-key "\C-cT" 'google-translate-query-translate)
-;;(global-set-key (kbd "\C-cq") 'google-translate-smooth-translate)
-
-;;(setq-default target-lang "zh")
-(setq-default target-lang "it")
-;;(setq-default target-lang "fr")
-(setq-default source-lang "en")
-
-(defun insert-next-line (translation)
-  "1. move to end of the line.
-  2. insert newline with index"
-  (interactive)
-  (let ((oldpos (point)))
-    (end-of-line)
-    (newline-and-indent))
-  (insert translation)
-  )
-
-(defun translation-tookit()
-  (interactive)
-(insert-next-line 
- (google-translate-json-translation (google-translate-request source-lang target-lang (thing-at-point 'line)))
- )
-)
-
-(global-set-key (kbd "\C-ct") 'translation-tookit)
 
 
-;; 相对行号和绝对行号同时显示
-(defun linum-relative-right-set-margin ()
-  "Make width of right margin the same as left margin"
-  (let* ((win (get-buffer-window))
-     (width (car (window-margins win))))
-    (set-window-margins win width width)))
 
-(defadvice linum-update-current (after linum-left-right-update activate)
-  "Advice to run right margin update"
-  (linum-relative-right-set-margin)
-  (linum-relative-right-update (line-number-at-pos)))
 
-(defadvice linum-delete-overlays (after linum-relative-right-delete activate)
-  "Set margins width to 0"
-  (set-window-margins (get-buffer-window) 0 0))
 
-(defun linum-relative-right-update (line)
-  "Put relative numbers to the right margin"
-  (dolist (ov (overlays-in (window-start) (window-end)))
-    (let ((str (overlay-get ov 'linum-str)))
-      (if str
-      (let ((nstr (number-to-string
-               (abs (- (string-to-number str) line)))))
-        ;; copy string properties
-        (set-text-properties 0 (length nstr) (text-properties-at 0 str) nstr)
-        (overlay-put ov 'after-string
-             (propertize " " 'display `((margin right-margin) ,nstr))))))))
 
-(global-set-key (kbd "C-c e") 'eshell)
 
-(global-set-key (kbd "C-c v") 'ranger)
-;; projectile配置
-(projectile-mode +1)
-(global-set-key (kbd "C-c pf") 'counsel-projectile)
-(global-set-key (kbd "C-c ps") 'counsel-projectile-switch-project)
-(setq projectile-auto-discover 'nil)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
