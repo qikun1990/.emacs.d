@@ -127,7 +127,7 @@
  '(package-selected-packages
    (quote
     (counsel-projectile projectile ranger google-translate pomidor org-download web-mode emmet-mode company-org-roam org-ref helm-bibtex org-roam-bibtex org-noter use-package org-roam-server org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source)))
- '(word-wrap t))
+ '(word-wrap nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -320,9 +320,7 @@ charset
   :config
   (push 'company-org-roam company-backends))
 
-
-
-
+(global-visual-line-mode t)
 
 
 
