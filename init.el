@@ -307,6 +307,13 @@ charset
 (setq org-roam-directory "d:/notebook/org-roam")
 (add-hook 'after-init-hook 'org-roam-mode)
 
+(setq org-roam-capture-templates
+  '(("d" "default" plain (function org-roam-capture--get-point)
+     "%?"
+     :file-name "${slug}"
+     :head "#+TITLE: ${title}\n#+HUGO_BASE_DIR: ../../eoebook/\n#+HUGO_SECTION: ../content/posts/\n#+HUGO_WEIGHT: 2001\n#+EXPORT_FILE_NAME: ${title}\n#+DATE: ${date}\n#+EXPORT_DATE: ${date}\n#+HUGO_AUTO_SET_LASTMOD: t\n#+HUGO_TAGS: \n#+HUGO_DRAFT: false\n#+author:\n#+hugo_custom_front_matter: :author \"赔了命3000\"\n\n\n\n#+hugo: more\n\n\n\n\n\n\n\n\n\n\n\n\n# Local Variables:\n# eval: (org-hugo-auto-export-mode)\n# End:\n"
+     :unnarrowed t)))
+  
 (global-set-key (kbd "C-c n l") 'org-roam)
 (global-set-key (kbd "C-c n f") 'org-roam-find-file)
 (global-set-key (kbd "C-c n i") 'org-roam-insert)
@@ -322,7 +329,10 @@ charset
 
 (global-visual-line-mode t)
 
-
+(global-set-key (kbd "C-c C-.") 'org-insert-structure-template)
+(add-to-list 'org-structure-template-alist '("r" . "src R"))
+(add-to-list 'org-structure-template-alist '("j" . "src JAVA"))
+(add-to-list 'org-structure-template-alist '("js" . "src JAVASCRIPT"))
 
 
 

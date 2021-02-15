@@ -18,8 +18,8 @@
  (rear-context-string . " :next_actions:\n")
  (position . 107))
 ("org-capture-last-stored"
- (filename . "d:/notebook/org-roam/campaign操作记录.org")
- (front-context-string . "#+TITLE: campaig")
+ (filename . "d:/notebook/org-roam/test5.org")
+ (front-context-string . "#+TITLE: test5\n#")
  (rear-context-string)
  (position . 1))
 )
