@@ -334,16 +334,12 @@ charset
 (add-to-list 'org-structure-template-alist '("j" . "src JAVA"))
 (add-to-list 'org-structure-template-alist '("js" . "src JAVASCRIPT"))
 
-
-
-
-
-
-
-
-
-
-
+;; 快速插入当前时间
+(defun insert-current-time ()
+"Insert the date in current position."
+(interactive)
+(insert (format-time-string "[%Y-%m-%d %H:%M]")))
+(global-set-key (kbd "C-c c") 'insert-current-time)
 
 
 
