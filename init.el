@@ -311,7 +311,7 @@ charset
   '(("d" "default" plain (function org-roam-capture--get-point)
      "%?"
      :file-name "${slug}"
-     :head "#+TITLE: ${title}\n#+HUGO_BASE_DIR: ../../eoebook/\n#+HUGO_SECTION: ../content/posts/\n#+HUGO_WEIGHT: 2001\n#+EXPORT_FILE_NAME: ${title}\n#+DATE: ${date}\n#+EXPORT_DATE: ${date}\n#+HUGO_AUTO_SET_LASTMOD: t\n#+HUGO_TAGS: \n#+HUGO_DRAFT: false\n#+author:\n#+hugo_custom_front_matter: :author \"赔了命3000\"\n\n\n\n#+hugo: more\n\n\n\n\n\n\n\n\n\n\n\n\n# Local Variables:\n# eval: (org-hugo-auto-export-mode)\n# End:\n"
+     :head "#+TITLE: ${title}\n#+HUGO_BASE_DIR: ../../eoebook/\n#+HUGO_SECTION: ../content/posts/\n#+HUGO_WEIGHT: 2001\n#+EXPORT_FILE_NAME: ${slug}\n#+DATE: ${date}\n#+EXPORT_DATE: ${date}\n#+HUGO_AUTO_SET_LASTMOD: t\n#+HUGO_TAGS: \n#+HUGO_DRAFT: false\n#+author:\n#+hugo_custom_front_matter: :author \"赔了命3000\"\n\n\n\n#+hugo: more\n\n\n\n\n\n\n\n\n\n\n\n\n# Local Variables:\n# eval: (org-hugo-auto-export-mode)\n# End:\n"
      :unnarrowed t)))
   
 (global-set-key (kbd "C-c n l") 'org-roam)
