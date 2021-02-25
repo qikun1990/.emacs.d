@@ -369,12 +369,12 @@ charset
 (require 'cl)   ; for delete*
 ;;; custom org emhasis color
 (setq org-emphasis-alist
-      (cons '("+" '(:strike-through t :foreground "gray"))
-            (delete* "+" org-emphasis-alist :key 'car :test 'equal)))
-
-(setq org-emphasis-alist
-      (cons '("*" '(:emphasis t :foreground "yellow"))
-            (delete* "*" org-emphasis-alist :key 'car :test 'equal)))
+  '(("*" (bold :foreground "Orange" ))
+    ("/" italic)
+    ("_" underline)
+    ("=" (:background "maroon" :foreground "white"))
+    ("~" (:background "deep sky blue" :foreground "MidnightBlue"))
+    ("+" (:strike-through t))))
 
 
 
