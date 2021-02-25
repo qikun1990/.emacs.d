@@ -382,6 +382,7 @@ charset
 (global-set-key (kbd "C-c p e") 'profiler-stop)
 (global-set-key (kbd "C-c p r") 'profiler-report)
 
+;; 该代码段(进入您的.emacs定制文件)将使Emacs暂时认为，杀死它时没有 Activity 的进程，因此不会出现烦人的提示。
 (require 'cl-lib)
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
