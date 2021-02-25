@@ -388,5 +388,5 @@ charset
   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
   (cl-letf (((symbol-function #'process-list) (lambda ())))
     ad-do-it))
-
+;; 解决org折叠展开卡顿的问题
 (setq inhibit-compacting-font-caches t)
