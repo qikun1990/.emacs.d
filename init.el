@@ -11,6 +11,7 @@
 
 ;; Add Packages
 (defvar my/packages '(
+		      org-bullets
 		      sound-wav
 		      ;;magit
 		      anki-editor
@@ -165,13 +166,13 @@
 (load-theme 'monokai 1)
 
 ;;行号背景
-(set-face-background 'linum "#000000")
+;; (set-face-background 'linum "#000000")
 ;;行号前景
-(set-face-foreground 'linum "#CD661D")
+;; (set-face-foreground 'linum "#CD661D")
 ;;当前行背景
-(set-face-background 'hl-line "blue")
+;; (set-face-background 'hl-line "blue")
 ;;当前行前景
-(set-face-foreground 'hl-line "white")
+;; (set-face-foreground 'hl-line "white")
 
 ;; 添加 Org-mode 文本内语法高亮
 (require 'org)
@@ -342,9 +343,27 @@ charset
 (global-set-key (kbd "C-c c") 'insert-current-time)
 
 
+;; 如何隐藏 headlines 前面的一堆*符号？
+;; (setq org-startup-indented t)
+;; 如何将 headlines 的符号从*变成其它符号？
+(use-package org-bullets
+  :custom
+  (org-bullets-bullet-list '("☰" "☷" "☯" "☭"))
+  (org-ellipsis "⤵")
+  :hook (org-mode . org-bullets-mode))
 
-
-
+;; (setq org-ellipsis " ▼ ")
+;; 如何直接显示 加粗 、 删除线 、 强调 等样式？
+(setq org-hide-emphasis-markers t)
+;; 如何设置 headline 的 TODO keywords？
+;; "|"之前的为进行中的状态， 之后的为结束的状态
+;;(setq org-todo-keywords
+;;      '((sequence "TODO" "HAND" "|" "DONE")))
+;; 如何给 TODO keywords 增加前景色、背景色？
+(setf org-todo-keyword-faces
+      '(("TODO" . (:foreground "white" :background "#95A5A6"   :weight bold))
+        ("HAND" . (:foreground "white" :background "#2E8B57"  :weight bold))
+        ("DONE" . (:foreground "white" :background "#3498DB" :weight bold))))
 
 
 
