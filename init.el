@@ -77,7 +77,7 @@
 (scroll-bar-mode -1)
 
 ;; 显示行号
-(global-linum-mode 1)
+;; (global-linum-mode 1)
 
 ;; 更改光标的样式（不能生效，解决方案见第二集）
 (setq-default cursor-type 'bar)
@@ -250,17 +250,17 @@ charset
 (setq org-mobile-files (list "d:/notebook/todo.org" "d:/notebook/blog.org"  "d:/notebook/inbox.org"))
 ;; 使用smart-input-source前需先安装macism，这个是切换mac中输入法的工具
 ;; 配置smart-input-source,20200725目前最新版的包名已经改成sis，包括方法前缀均已改变
-(setq smart-input-source-external-ism "im-select.exe") ; for windows 命令行切换输入法工具
-(setq smart-input-source-english "1033")
-(setq-default smart-input-source-other "2052")
-;; enable the /cursor color/ mode
-(smart-input-source-global-cursor-color-mode t)
-;; enable the /respect/ mode
-(smart-input-source-global-respect-mode t)
-;; enable the /follow context/ mode for all buffers
-(smart-input-source-global-follow-context-mode t)
-;; enable the /inline english/ mode for all buffers
-(smart-input-source-global-inline-mode t)
+;; (setq smart-input-source-external-ism "im-select.exe") ; for windows 命令行切换输入法工具
+;; (setq smart-input-source-english "1033")
+;; (setq-default smart-input-source-other "2052")
+;; ;; enable the /cursor color/ mode
+;; (smart-input-source-global-cursor-color-mode t)
+;; ;; enable the /respect/ mode
+;; (smart-input-source-global-respect-mode t)
+;; ;; enable the /follow context/ mode for all buffers
+;; (smart-input-source-global-follow-context-mode t)
+;; ;; enable the /inline english/ mode for all buffers
+;; (smart-input-source-global-inline-mode t)
 
 (setq org-todo-keywords
       (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
@@ -378,7 +378,6 @@ charset
 
 
 
-
-
-
-
+(global-set-key (kbd "C-c p s") 'profiler-start)
+(global-set-key (kbd "C-c p e") 'profiler-stop)
+(global-set-key (kbd "C-c p r") 'profiler-report)
