@@ -366,8 +366,15 @@ charset
         ("DONE" . (:foreground "white" :background "#3498DB" :weight bold))))
 
 
+(require 'cl)   ; for delete*
+;;; custom org emhasis color
+(setq org-emphasis-alist
+      (cons '("+" '(:strike-through t :foreground "gray"))
+            (delete* "+" org-emphasis-alist :key 'car :test 'equal)))
 
-
+(setq org-emphasis-alist
+      (cons '("*" '(:emphasis t :foreground "yellow"))
+            (delete* "*" org-emphasis-alist :key 'car :test 'equal)))
 
 
 
