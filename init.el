@@ -95,7 +95,7 @@
 ;; 快速打开todo文件
 (defun open-todo-file()
   (interactive)
-  (find-file "d:/notebook/org-roam/follow_along_120_days_and_30000rmb_to_start_affiliate_media_buy.org"))
+  (find-file "d:/notebook/todo.org"))
 
 ;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
 (global-set-key (kbd "<f8>") 'open-todo-file)
@@ -191,8 +191,8 @@
 ;;	 "* TODO [#B] %?\n  %i\n"
 ;;	 :empty-lines 1)))
 (setq org-capture-templates
-      '(("t" "TODO" entry (file "d:/notebook/inbox.org")
-	 "* TODO [#B] %?\n  %i\n"
+      '(("t" "TODO" entry (file "d:/notebook/todo.org")
+	 "* TODO [#C] %?\n  %i\n"
 	 :empty-lines 1)))
 ;; 设置添加待办事项的快捷键
 (global-set-key (kbd "C-c t") 'org-capture)
