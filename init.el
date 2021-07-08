@@ -390,3 +390,8 @@ charset
     ad-do-it))
 ;; 解决org折叠展开卡顿的问题
 (setq inhibit-compacting-font-caches t)
+
+(require 'org-download)
+
+;; Drag-and-drop to `dired`
+(add-hook 'dired-mode-hook 'org-download-enable)
