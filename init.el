@@ -100,6 +100,14 @@
 ;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
 (global-set-key (kbd "<f8>") 'open-todo-file)
 
+;; 快速打开todo文件
+(defun open-my-dir()
+  (interactive)
+  (find-file "d:/notebook/org-roam/"))
+
+;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
+(global-set-key (kbd "<f6>") 'open-my-dir)
+
 ;; 快速打开配置文件
 (defun open-init-file()
   (interactive)
@@ -402,7 +410,11 @@ charset
 (setq easy-hugo-postdir "content/posts")
 (setq easy-hugo-url "https://qikun1990.github.io")
 (setq easy-hugo-previewtime "300")
-(define-key global-map (kbd "C-c e h") 'easy-hugo)
+(define-key global-map (kbd "<f9>") 'easy-hugo)
 
  (dolist (m '(easy-hugo-mode))
    (add-to-list 'evil-emacs-state-modes m))
+
+
+
+(global-set-key (kbd "<f7>") 'org-hugo-export-to-md)
