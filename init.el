@@ -399,6 +399,7 @@ charset
 ;; easy-hugo
 
 (setq easy-hugo-basedir "D:/eoebook")
+(setq easy-hugo-postdir "content/posts")
 (setq easy-hugo-url "https://qikun1990.github.io")
 (setq easy-hugo-previewtime "300")
 (define-key global-map (kbd "C-c e h") 'easy-hugo)
