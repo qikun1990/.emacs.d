@@ -159,7 +159,7 @@ The default is drwxr-xr-x."
   :group 'easy-hugo
   :type 'string)
 
-(defcustom easy-hugo-github-deploy-script "deploy.sh"
+(defcustom easy-hugo-github-deploy-script "deploy.bat"
   "Github-deploy-script file name."
   :group 'easy-hugo
   :type 'string)
@@ -336,7 +336,7 @@ Because only two are supported by hugo."
   "Default easy-hugo-bin.")
 
 (defconst easy-hugo--default-github-deploy-script
-  "deploy.sh"
+  "deploy.bat"
   "Default `easy-hugo' github-deploy-script.")
 
 (defconst easy-hugo--default-image-directory

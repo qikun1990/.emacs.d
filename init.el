@@ -401,7 +401,7 @@ charset
 (setq easy-hugo-basedir "D:/eoebook")
 (setq easy-hugo-url "https://qikun1990.github.io")
 (setq easy-hugo-previewtime "300")
-(define-key global-map (kbd "C-c C-e") 'easy-hugo)
+(define-key global-map (kbd "C-c e h") 'easy-hugo)
 
  (dolist (m '(easy-hugo-mode))
    (add-to-list 'evil-emacs-state-modes m))
