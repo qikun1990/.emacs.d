@@ -103,7 +103,7 @@
 ;; 快速打开todo文件
 (defun open-my-dir()
   (interactive)
-  (find-file "d:/notebook/org-roam/"))
+  (find-file "d:/notebook/blog/"))
 
 ;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
 (global-set-key (kbd "<f9>") 'open-my-dir)
