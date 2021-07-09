@@ -135,7 +135,7 @@
     ("d:/notebook/inbox.org" "d:/notebook/org-roam/ab_exe.org" "d:/notebook/org-roam/affiliate_networks.org" "d:/notebook/org-roam/billing.org" "d:/notebook/org-roam/binom.org" "d:/notebook/org-roam/emacs.org" "d:/notebook/org-roam/emacs常用快捷键.org" "d:/notebook/org-roam/follow_along_120_days_and_30000rmb_to_start_affiliate_media_buy.org" "d:/notebook/org-roam/gtd.org" "d:/notebook/org-roam/gtd_archive.org" "d:/notebook/org-roam/gtd_calendar.org" "d:/notebook/org-roam/gtd_goal.org" "d:/notebook/org-roam/gtd_maybe.org" "d:/notebook/org-roam/gtd_next_actions.org" "d:/notebook/org-roam/gtd_projects.org" "d:/notebook/org-roam/gtd_reference.org" "d:/notebook/org-roam/gtd_trash.org" "d:/notebook/org-roam/gtd_waiting.org" "d:/notebook/org-roam/html_css.org" "d:/notebook/org-roam/html常见元素.org" "d:/notebook/org-roam/html版本.org" "d:/notebook/org-roam/http.org" "d:/notebook/org-roam/ioncube加密软件的安装步骤.org" "d:/notebook/org-roam/java.org" "d:/notebook/org-roam/javascript.org" "d:/notebook/org-roam/joomla使用redis缓存加速网站.org" "d:/notebook/org-roam/linux.org" "d:/notebook/org-roam/mariadb安装配置.org" "d:/notebook/org-roam/media_buy.org" "d:/notebook/org-roam/mysql.org" "d:/notebook/org-roam/mysql添加字段命令.org" "d:/notebook/org-roam/nginx配置https.org" "d:/notebook/org-roam/offer.org" "d:/notebook/org-roam/org_roam.org" "d:/notebook/org-roam/org_roam_bibtex文献管理.org" "d:/notebook/org-roam/org_roam_rebuild_db.org" "d:/notebook/org-roam/org_roam_server预览404_not_found.org" "d:/notebook/org-roam/org_roam如何删除节点.org" "d:/notebook/org-roam/seo.org" "d:/notebook/org-roam/shell.org" "d:/notebook/org-roam/slip_box_method.org" "d:/notebook/org-roam/spring_boot部署遇到的问题.org" "d:/notebook/org-roam/spring_mvc_unsupported_media_type_json.org" "d:/notebook/org-roam/spy广告.org" "d:/notebook/org-roam/traffic_networks.org" "d:/notebook/org-roam/vi.org" "d:/notebook/org-roam/vortex_40_day_tutorial_2019.org" "d:/notebook/org-roam/win10开机如何不进入系统选择界面.org" "d:/notebook/org-roam/windows.org" "d:/notebook/org-roam/win键被锁处理方法.org" "d:/notebook/org-roam/上海公司注册.org" "d:/notebook/org-roam/使用linux中crontab定时任务按时备份lampp中mysql数据库.org" "d:/notebook/org-roam/公司事务.org" "d:/notebook/org-roam/公司社保开户流程.org" "d:/notebook/org-roam/发展中国家.org" "d:/notebook/org-roam/周工作量统计.org" "d:/notebook/org-roam/响应式web设计_viewport.org" "d:/notebook/org-roam/多线程.org" "d:/notebook/org-roam/学习工作.org" "d:/notebook/org-roam/操作系统.org" "d:/notebook/org-roam/数据库.org" "d:/notebook/org-roam/日工作量统计.org" "d:/notebook/org-roam/月工作量统计.org" "d:/notebook/org-roam/泛型.org" "d:/notebook/org-roam/爱宝book.org" "d:/notebook/org-roam/爱宝产品部署操作记录.org" "d:/notebook/org-roam/社保缴纳_税务缴纳.org" "d:/notebook/org-roam/编程语言.org" "d:/notebook/org-roam/编辑器.org" "d:/notebook/org-roam/阿里云ecs配置搭建服务.org" "d:/notebook/org-roam/集合.org")))
  '(package-selected-packages
    (quote
-    (easy-hugo counsel-projectile projectile ranger google-translate pomidor org-download web-mode emmet-mode company-org-roam org-ref helm-bibtex org-roam-bibtex org-noter use-package org-roam-server org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source)))
+    (windresize easy-hugo counsel-projectile projectile ranger google-translate pomidor org-download web-mode emmet-mode company-org-roam org-ref helm-bibtex org-roam-bibtex org-noter use-package org-roam-server org-roam anki-editor org-pomodoro evil undo-tree nyan-mode company smart-input-source)))
  '(word-wrap nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -425,3 +425,24 @@ charset
 ;; 该目标用于提示文件复制，重命名等。
 ;; 将其放在您的init文件中：(setq dired-dwim-target t)。然后，转到split-window-vertically目录，拆分窗口，然后转到另一个目录。当您按C键进行复制时，拆分窗格中的另一个目录将成为默认目标。
 (setq dired-dwim-target t)
+
+
+
+;;;windresize
+(require 'windresize)
+ (global-set-key (kbd "C-c m") 'windresize)
+
+;;;Winner-mode
+;;可以使用 Ctrl-c ← （就是向左的箭头键）组合键，退回你的上一个窗口设置。）
+;;可以使用 Ctrl-c → （前进一个窗口设置。）
+(when (fboundp 'winner-mode) 
+  (winner-mode) 
+  (windmove-default-keybindings)) 
+
+;;;windmove-mode
+(when (fboundp 'windmove-default-keybindings)
+      (windmove-default-keybindings)
+    (global-set-key (kbd "C-c l")  'windmove-left)
+    (global-set-key (kbd "C-c h") 'windmove-right)
+    (global-set-key (kbd "C-c k")    'windmove-up)
+    (global-set-key (kbd "C-c j")  'windmove-down))
