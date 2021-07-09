@@ -418,3 +418,10 @@ charset
 
 
 (global-set-key (kbd "<f10>") 'org-hugo-export-to-md)
+
+
+;; dired-dwim-target是在`dired.el'中定义的变量。它的值为零
+;; 文档：如果非零，Dired会尝试猜测默认的目标目录。这意味着：如果下一个窗口中显示Dired缓冲区，请使用其当前目录，而不是此Dired缓冲区的当前目录。
+;; 该目标用于提示文件复制，重命名等。
+;; 将其放在您的init文件中：(setq dired-dwim-target t)。然后，转到split-window-vertically目录，拆分窗口，然后转到另一个目录。当您按C键进行复制时，拆分窗格中的另一个目录将成为默认目标。
+(setq dired-dwim-target t)
