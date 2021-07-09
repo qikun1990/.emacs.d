@@ -417,7 +417,7 @@ charset
 
 
 
-(global-set-key (kbd "<f10>") 'org-hugo-export-to-md)
+(global-set-key (kbd "<f10>") 'org-hugo-export-wim-to-md)
 
 
 ;; dired-dwim-target是在`dired.el'中定义的变量。它的值为零
