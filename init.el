@@ -427,7 +427,7 @@ charset
 (setq dired-dwim-target t)
 
 
-
+;; 参考链接：https://ruby-china.org/topics/34558
 ;;;windresize
 (require 'windresize)
  (global-set-key (kbd "C-c m") 'windresize)
@@ -442,7 +442,7 @@ charset
 ;;;windmove-mode
 (when (fboundp 'windmove-default-keybindings)
       (windmove-default-keybindings)
-    (global-set-key (kbd "C-c l")  'windmove-left)
-    (global-set-key (kbd "C-c h") 'windmove-right)
+    (global-set-key (kbd "C-c h")  'windmove-left)
+    (global-set-key (kbd "C-c l") 'windmove-right)
     (global-set-key (kbd "C-c k")    'windmove-up)
     (global-set-key (kbd "C-c j")  'windmove-down))
