@@ -327,7 +327,7 @@ charset
 (global-set-key (kbd "C-c n f") 'org-roam-find-file)
 (global-set-key (kbd "C-c n i") 'org-roam-insert)
 (global-set-key (kbd "C-c n I") 'org-roam-insert-immediate)
-(global-set-key (kbd "C-c n c") 'org-roam-capture)
+(global-set-key (kbd "<f4>") 'org-roam-capture)
 
 (use-package company-org-roam
   :ensure t
