@@ -106,7 +106,7 @@
   (find-file "d:/notebook/org-roam/"))
 
 ;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
-(global-set-key (kbd "<f6>") 'open-my-dir)
+(global-set-key (kbd "<f9>") 'open-my-dir)
 
 ;; 快速打开配置文件
 (defun open-init-file()
@@ -114,7 +114,7 @@
   (find-file "~/.emacs.d/init.el"))
 
 ;; 这一行代码，将函数 open-init-file 绑定到 <f2> 键上
-(global-set-key (kbd "<f10>") 'open-init-file)
+(global-set-key (kbd "<f6>") 'open-init-file)
 
 ;; 快速加载配置文件
 (defun load-init-file()
@@ -122,7 +122,7 @@
   (load-file "~/.emacs.d/init.el"))
 
 ;; 这一行代码，将函数 load-init-file 绑定到 <f1> 键上
-(global-set-key (kbd "<f12>") 'load-init-file)
+(global-set-key (kbd "<f7>") 'load-init-file)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -410,11 +410,11 @@ charset
 (setq easy-hugo-postdir "content/posts")
 (setq easy-hugo-url "https://qikun1990.github.io")
 (setq easy-hugo-previewtime "300")
-(define-key global-map (kbd "<f9>") 'easy-hugo)
+(define-key global-map (kbd "<f12>") 'easy-hugo)
 
  (dolist (m '(easy-hugo-mode))
    (add-to-list 'evil-emacs-state-modes m))
 
 
 
-(global-set-key (kbd "<f7>") 'org-hugo-export-to-md)
+(global-set-key (kbd "<f10>") 'org-hugo-export-to-md)
