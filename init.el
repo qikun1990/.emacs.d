@@ -103,7 +103,7 @@
 ;; 快速打开todo文件
 (defun open-my-dir()
   (interactive)
-  (find-file "d:/notebook/blog/"))
+  (find-file "d:/notebook/org-roam/"))
 
 ;; 这一行代码，将函数 open-todo-file 绑定到 <f3> 键上
 (global-set-key (kbd "<f9>") 'open-my-dir)
@@ -320,7 +320,7 @@ charset
   '(("d" "default" plain (function org-roam-capture--get-point)
      "%?"
      :file-name "${slug}"
-     :head "#+TITLE: ${title}\n#+HUGO_BASE_DIR: ../../eoebook/\n#+HUGO_SECTION: ../content/posts/\n#+HUGO_WEIGHT: 2001\n#+EXPORT_FILE_NAME: ${slug}\n#+DATE: ${date}\n#+EXPORT_DATE: ${date}\n#+HUGO_AUTO_SET_LASTMOD: t\n#+HUGO_TAGS: \n#+HUGO_DRAFT: false\n#+author:\n#+hugo_custom_front_matter: :author \"赔了命3000\"\n# Local Variables:\n# eval: (org-hugo-auto-export-mode)\n# End:\n\n\n#+hugo: more\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+     :head "#+TITLE: ${title}\n#+HUGO_BASE_DIR: ../../eoebook/\n#+HUGO_SECTION: ../content/posts/\n#+HUGO_WEIGHT: 2001\n#+EXPORT_FILE_NAME: ${slug}\n#+DATE: ${date}\n#+EXPORT_DATE: ${date}\n#+HUGO_AUTO_SET_LASTMOD: t\n#+HUGO_TAGS: \n#+HUGO_CATEGORIES: \n#+HUGO_DRAFT: false\n#+author:\n#+hugo_custom_front_matter: :author \"赔了命3000\"\n# Local Variables:\n# eval: (org-hugo-auto-export-mode)\n# End:\n\n\n#+hugo: more\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
      :unnarrowed t)))
   
 (global-set-key (kbd "C-c n l") 'org-roam)
