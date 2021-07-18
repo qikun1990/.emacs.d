@@ -446,3 +446,6 @@ charset
     (global-set-key (kbd "C-c l") 'windmove-right)
     (global-set-key (kbd "C-c k")    'windmove-up)
     (global-set-key (kbd "C-c j")  'windmove-down))
+
+;; 可以直接refile到文件							 
+(setq org-refile-use-outline-path 'file)
